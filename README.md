@@ -4,6 +4,12 @@ A café ordering website built with PHP, MySQL and JavaScript. Originally a grou
 
 [![Project checks](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml/badge.svg)](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml)
 
+## Try it
+
+This repository contains the source code; there is no hosted demo yet. View the [screenshots](#screenshots), or follow [Run locally](#run-locally) to try the customer and administrator accounts on your computer.
+
+Both roles use the same login page. Customer accounts open the storefront; administrator accounts open the dashboard. No shared login credentials are published.
+
 ## Features
 
 - Customer registration, login and profile editing
@@ -38,7 +44,7 @@ Start with [the menu page](public/menu.html), [checkout handler](public/create_o
 
 Requires PHP 8.1+, MySQL/MariaDB, and the PHP `mysqli`, `mbstring` and `fileinfo` extensions. Tested using XAMPP with PHP 8.2.4.
 
-1. Copy the project into `C:/xampp/htdocs/GreenSproutCafe-Portfolio`.
+1. Download this repository using **Code → Download ZIP**, extract it, and copy the project into `C:/xampp/htdocs/GreenSproutCafe-Portfolio`.
 2. Start Apache and MySQL in XAMPP.
 3. For a new installation, import `database/schema.sql` through phpMyAdmin.
 4. Open [localhost/GreenSproutCafe-Portfolio](http://localhost/GreenSproutCafe-Portfolio/).
@@ -55,6 +61,17 @@ Use a password of at least 12 characters. Account passwords are not included in 
 Database defaults work with a standard local XAMPP setup. For other environments, configure the server variables listed in [.env.example](.env.example). The app does not automatically read `.env` files.
 
 For an existing installation, back up the database and run `C:/xampp/php/php.exe scripts/migrate.php` instead of importing the starter schema again. For deployment, point the web server at `public/`. PHP and MySQL are required; GitHub Pages cannot run the backend.
+
+## Try both roles locally
+
+After completing the setup above:
+
+| Role | How to sign in | What to try |
+| --- | --- | --- |
+| Customer | Open **Sign up**, create an account, then log in with its username and password. | Filter dishes, add items to the cart, enter a Kuala Lumpur delivery address, place a demo order and open its invoice. |
+| Administrator | Run the admin-creation command above with your own username and password, then enter them on the same login page. | Edit a menu item, find the customer's order in **Operations**, change its status, view **Insights** and export a CSV. |
+
+To see the full flow, place an order as a customer, sign out, update that order as an administrator, then sign back in as the customer and check its tracking page. Use sample contact details; no payment or delivery takes place.
 
 ## Tests
 
