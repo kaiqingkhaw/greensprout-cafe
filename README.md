@@ -34,11 +34,25 @@ Start with [the menu page](public/menu.html), [checkout handler](public/create_o
 
 ## Screenshots
 
+### Menu
+
 ![Customer menu](docs/screenshots/menu.png)
+
+| Login | Checkout |
+| --- | --- |
+| [![Login](docs/screenshots/login.png)](docs/screenshots/login.png) | [![Demo checkout](docs/screenshots/checkout.png)](docs/screenshots/checkout.png) |
+
+### Admin dashboard
 
 ![Admin dashboard](docs/screenshots/admin.png)
 
-[Login](docs/screenshots/login.png) · [About](docs/screenshots/about.png) · [Mobile admin](docs/screenshots/admin-mobile.png)
+<table>
+  <tr><th width="65%">About</th><th width="35%">Mobile admin</th></tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/about.png"><img src="docs/screenshots/about.png" alt="About GreenSprout" width="640"></a></td>
+    <td align="center"><a href="docs/screenshots/admin-mobile.png"><img src="docs/screenshots/admin-mobile.png" alt="Product management on mobile" width="180"></a></td>
+  </tr>
+</table>
 
 ## Run locally
 
