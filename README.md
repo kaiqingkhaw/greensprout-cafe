@@ -34,25 +34,27 @@ Start with [the menu page](public/menu.html), [checkout handler](public/create_o
 
 ## Screenshots
 
-### Menu
+Click a screenshot to view it at full size.
 
-![Customer menu](docs/screenshots/menu.png)
-
-| Login | Checkout |
+| Menu | Login |
 | --- | --- |
-| [![Login](docs/screenshots/login.png)](docs/screenshots/login.png) | [![Demo checkout](docs/screenshots/checkout.png)](docs/screenshots/checkout.png) |
+| [![Customer menu](docs/screenshots/menu.png)](docs/screenshots/menu.png) | [![Login](docs/screenshots/login.png)](docs/screenshots/login.png) |
 
-### Admin dashboard
+| Checkout | Admin dashboard |
+| --- | --- |
+| [![Demo checkout](docs/screenshots/checkout.png)](docs/screenshots/checkout.png) | [![Admin dashboard](docs/screenshots/admin.png)](docs/screenshots/admin.png) |
 
-![Admin dashboard](docs/screenshots/admin.png)
+### Mobile
 
 <table>
-  <tr><th width="65%">About</th><th width="35%">Mobile admin</th></tr>
+  <tr><th width="50%">Customer menu</th><th width="50%">Product management</th></tr>
   <tr>
-    <td align="center"><a href="docs/screenshots/about.png"><img src="docs/screenshots/about.png" alt="About GreenSprout" width="640"></a></td>
-    <td align="center"><a href="docs/screenshots/admin-mobile.png"><img src="docs/screenshots/admin-mobile.png" alt="Product management on mobile" width="180"></a></td>
+    <td align="center"><a href="docs/screenshots/menu-mobile.png"><img src="docs/screenshots/menu-mobile.png" alt="Customer menu on mobile" width="240"></a></td>
+    <td align="center"><a href="docs/screenshots/admin-mobile.png"><img src="docs/screenshots/admin-mobile.png" alt="Product management on mobile" width="240"></a></td>
   </tr>
 </table>
+
+[View the About page](docs/screenshots/about.png)
 
 ## Run locally
 
