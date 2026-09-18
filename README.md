@@ -1,6 +1,6 @@
 # GreenSprout Café
 
-A café ordering website built with PHP, MySQL and JavaScript. Originally a group university project, later redesigned and extended by Khaw Kai Qing.
+A café ordering website with a customer storefront and admin dashboard, built with PHP, MySQL and JavaScript.
 
 [![Project checks](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml/badge.svg)](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml)
 
