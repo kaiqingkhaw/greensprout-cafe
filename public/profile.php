@@ -718,7 +718,7 @@ $user = $stmt->get_result()->fetch_assoc();
         <div class="footer-column">
             <h3>Green Sprout Café</h3>
             <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">Breakfast, bowls, drinks and desserts.</p>
-            <p class="portfolio-disclosure">Portfolio demonstration · Social channels are intentionally not connected.</p>
+            <p class="portfolio-disclosure">Demo application · No real orders or payments.</p>
         </div>
         
         <div class="footer-column">
@@ -747,7 +747,7 @@ $user = $stmt->get_result()->fetch_assoc();
     </div>
     
     <div class="copyright">
-        <p>&copy; 2026 GreenSprout Café. University portfolio project.</p>
+        <p>&copy; 2026 GreenSprout Café. University project.</p>
     </div>
 </footer>
 

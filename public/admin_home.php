@@ -71,6 +71,6 @@ $today = new DateTimeImmutable('now', new DateTimeZone('Asia/Singapore'));
       </section>
     </div>
   </main>
-  <footer><div class="copyright"><p>&copy; 2026 GreenSprout Organic Café · Secure admin workspace</p><p class="portfolio-disclosure">Portfolio demonstration · No real payments or customer notifications.</p></div></footer>
+  <footer><div class="copyright"><p>&copy; 2026 GreenSprout Organic Café · Secure admin workspace</p><p class="portfolio-disclosure">Demo application · No real payments or customer notifications.</p></div></footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
   "name": "greensprout-cafe",
   "version": "1.0.0",
   "private": true,
-  "description": "A full-stack PHP and MySQL university caf\u00c3\u00a9 portfolio project",
+  "description": "A cafe ordering application built with PHP, MySQL and JavaScript",
   "scripts": {
     "test": "node tests/check-syntax.cjs && node tests/check-assets.cjs && node tests/catalog-regression.cjs && node tests/home-menu-regression.cjs && node tests/frontend-regression.cjs",
     "test:http": "node tests/full-regression.cjs",

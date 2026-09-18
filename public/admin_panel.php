@@ -953,7 +953,7 @@ $reviews = $conn->query("SELECT r.id, u.name, r.rating, r.review, r.created_at F
             <div class="footer-column">
                 <h3>GreenSprout Cafe</h3>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">Breakfast, bowls, drinks and desserts.</p>
-                <p class="portfolio-disclosure">Portfolio demonstration · Social channels are intentionally not connected.</p>
+                <p class="portfolio-disclosure">Demo application · No real orders or payments.</p>
             </div>
             
             <div class="footer-column">
