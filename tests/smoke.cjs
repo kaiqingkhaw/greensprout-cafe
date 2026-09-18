@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const base = process.env.TEST_BASE_URL || 'http://localhost/GreenSproutCafe-Portfolio/';
+const base = process.env.TEST_BASE_URL || 'http://localhost/GreenSproutCafe-Portfolio/public/';
 if (!process.env.TEST_USERNAME || !process.env.TEST_PASSWORD || process.env.ALLOW_TEST_WRITES !== '1') {
  console.error('Use a disposable local database and set TEST_USERNAME, TEST_PASSWORD and ALLOW_TEST_WRITES=1.');
  process.exit(1);

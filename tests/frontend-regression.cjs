@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict'), fs=require('node:fs'), path=require('node:path'), vm=require('node:vm');
-const root=path.resolve(__dirname,'..');
+const root=path.resolve(__dirname,'..','public');
 const nodes=new Map();
 function element(id){if(!nodes.has(id)) nodes.set(id,{value:'',hidden:false,attrs:{},events:{},addEventListener(type,fn){this.events[type]=fn;},setAttribute(k,v){this.attrs[k]=v;},removeAttribute(k){delete this.attrs[k];},focus(){}});return nodes.get(id);}
 const context={window:{addEventListener(){}},document:{getElementById:element},Date};

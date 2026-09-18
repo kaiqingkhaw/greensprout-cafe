@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(__dirname, '..', 'public');
 let checked = 0;
 let pages = 0;
 for (const file of fs.readdirSync(root).filter(name => /\.(html|php)$/.test(name))) {

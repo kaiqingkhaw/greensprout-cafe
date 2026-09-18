@@ -5,7 +5,7 @@ const {spawnSync} = require('node:child_process');
 const {randomBytes} = require('node:crypto');
 const path = require('node:path');
 if (process.env.ALLOW_TEST_WRITES !== '1') { console.error('Set ALLOW_TEST_WRITES=1 to create and clean up temporary QA records.'); process.exit(1); }
-const base = process.env.TEST_BASE_URL || 'http://localhost/GreenSproutCafe-Portfolio/';
+const base = process.env.TEST_BASE_URL || 'http://localhost/GreenSproutCafe-Portfolio/public/';
 if (!['localhost','127.0.0.1'].includes(new URL(base).hostname)) throw Error('This fixture suite is localhost-only.');
 const root = path.resolve(__dirname,'..');
 const tag = 'gsaudit-' + randomBytes(6).toString('hex');
@@ -13,7 +13,7 @@ const password = randomBytes(18).toString('hex');
 const names = ['admin','customer','other'].map(role => tag+'-'+role);
 let checks=0, uploadPaths=[], seeded=false;
 function php(source) {
- const run = spawnSync(process.env.PHP_BINARY || 'C:/xampp/php/php.exe', ['-r', "require 'config.php'; "+source], {cwd:root,encoding:'utf8',env:{...process.env,QA_NAMES:JSON.stringify(names),QA_PASSWORD:password,QA_TAG:tag,QA_UPLOADS:JSON.stringify(uploadPaths)}});
+ const run = spawnSync(process.env.PHP_BINARY || 'C:/xampp/php/php.exe', ['-r', "require 'app/config.php'; "+source], {cwd:root,encoding:'utf8',env:{...process.env,QA_NAMES:JSON.stringify(names),QA_PASSWORD:password,QA_TAG:tag,QA_UPLOADS:JSON.stringify(uploadPaths)}});
  if (run.status !== 0) throw Error(run.stderr || 'Fixture command failed');
  return run.stdout.trim();
 }
@@ -121,6 +121,6 @@ const gif=Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
  console.log(`COMPLETE: ${checks} checks passed.`);
 })().catch(error=>{console.error(error);process.exitCode=1}).finally(()=>{
  if(!seeded) return;
- php(`$names=json_decode(getenv('QA_NAMES'),true);foreach($names as $u){$e=$u.'@example.invalid';$s=db()->prepare('DELETE FROM users WHERE username=? AND email=?');$s->bind_param('ss',$u,$e);$s->execute();$s=db()->prepare('DELETE FROM contact_submissions WHERE email=?');$s->bind_param('s',$e);$s->execute();}$tag=getenv('QA_TAG');$s=db()->prepare('DELETE FROM products WHERE name=?');$s->bind_param('s',$tag);$s->execute();foreach(json_decode(getenv('QA_UPLOADS'),true) as $p){if(preg_match('~^uploads/profile_[0-9]+_[a-f0-9]{32}\\.gif$~',$p)&&is_file(__DIR__.'/'.$p))unlink(__DIR__.'/'.$p);}`);
+ php(`$names=json_decode(getenv('QA_NAMES'),true);foreach($names as $u){$e=$u.'@example.invalid';$s=db()->prepare('DELETE FROM users WHERE username=? AND email=?');$s->bind_param('ss',$u,$e);$s->execute();$s=db()->prepare('DELETE FROM contact_submissions WHERE email=?');$s->bind_param('s',$e);$s->execute();}$tag=getenv('QA_TAG');$s=db()->prepare('DELETE FROM products WHERE name=?');$s->bind_param('s',$tag);$s->execute();foreach(json_decode(getenv('QA_UPLOADS'),true) as $p){if(preg_match('~^uploads/profile_[0-9]+_[a-f0-9]{32}\\.gif$~',$p)&&is_file(__DIR__.'/public/'.$p))unlink(__DIR__.'/public/'.$p);}`);
  console.log('Cleaned up this run’s temporary accounts, orders, reviews, contact and upload.');
 });

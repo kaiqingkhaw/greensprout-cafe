@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const source = fs.readFileSync(path.join(__dirname,'../assets/js/home-menu.js'),'utf8');
+const source = fs.readFileSync(path.join(__dirname,'../public/assets/js/home-menu.js'),'utf8');
 function element(tag) {
     return {tag,children:[],attributes:{},events:{},append(...nodes){this.children.push(...nodes);},replaceChildren(){this.children=[];},setAttribute(k,v){this.attributes[k]=v;},addEventListener(k,v){this.events[k]=v;}};
 }

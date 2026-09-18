@@ -1,3 +1,4 @@
 <?php
-header('Location: MainMenu.html', true, 302);
+// Convenience entry point for local XAMPP installations.
+header('Location: public/', true, 302);
 exit;

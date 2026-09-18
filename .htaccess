@@ -1,11 +1,11 @@
 Options -Indexes
 DirectoryIndex index.php
-<IfModule mod_headers.c>
-    Header always set X-Content-Type-Options "nosniff"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set X-Frame-Options "SAMEORIGIN"
-</IfModule>
-
-<FilesMatch "^(\.env|config\.php|schema\.sql|admin_main_menu\.html|business_overview\.html)$">
+<FilesMatch "^\.">
     Require all denied
 </FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Keep bookmarks from the original university project working.
+    RewriteCond %{REQUEST_URI} ^(.*/)[^/]+$
+    RewriteRule ^(About\.us\.html|admin_edit_product\.php|admin_export\.php|admin_home\.php|admin_manage_menu\.php|admin_overview\.php|admin_panel\.php|admin_profile\.php|check_session\.php|contact\.php|create_order\.php|csrf\.php|get_latest_order\.php|get_order_details\.php|get_products\.php|get_reviews\.php|GreenSproutCafe\.html|login\.html|login\.php|logout\.php|MainMenu\.html|menu\.html|profile\.php|signup\.html|signup\.php|submit_review\.php)$ %1public/$1 [R=307,L]
+</IfModule>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login - Green Sprout Café</title>
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/auth.css?v=release5">
+  <script src="assets/js/api-client.js?v=audit6"></script>
+  <script src="assets/js/storefront.js?v=portfolio7" defer></script>
+</head>
+<body class="login-page">
+  <a class="auth-brand" href="MainMenu.html" aria-label="Green Sprout Café home">
+    <span class="auth-brand-mark" aria-hidden="true"><i class="fas fa-leaf"></i></span>
+    <span>Green Sprout <em>Café</em></span>
+  </a>
+  
+  <aside class="auth-showcase" aria-label="Green Sprout Café introduction">
+    <p class="auth-showcase-kicker">Welcome to GreenSprout</p>
+    <h1>Good food.<br><em>A greener kind of day.</em></h1>
+    <p class="auth-showcase-copy">Your next meal is a few clicks away.</p>
+    <div class="auth-showcase-meta"><span>Breakfast</span><i aria-hidden="true">·</i><span>Bowls</span><i aria-hidden="true">·</i><span>Drinks</span></div>
+  </aside>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="video-bg" aria-hidden="true">
+    <source src="assets/videos/cafe-atmosphere.mp4" type="video/mp4">
+  </video>
+
+  <!-- Login Form -->
+  <main class="login-container" id="loginBox">
+    <button class="back-btn" aria-label="Back to home" onclick="location.href='MainMenu.html'">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <h2>Welcome back</h2>
+    <p class="auth-intro">Sign in to place orders and manage your account.</p>
+    <form id="loginForm" novalidate>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <i class="fas fa-user"></i>
+        <input type="text" id="username" name="username" maxlength="50" placeholder="Username" aria-label="Username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="input-group has-password">
+        <label for="password">Password</label>
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+        <button type="button" class="password-toggle" data-password-target="password" aria-label="Show password" aria-pressed="false"><i class="fas fa-eye"></i></button>
+      </div>
+      
+      <div class="options">
+        <label class="remember">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          Remember username
+        </label>
+        <a href="#" class="forgot-password" id="forgotLink">Need login help?</a>
+      </div>
+      
+      <button type="submit" class="login-btn">Login</button>
+      <div id="loginError" class="error-message" role="alert" tabindex="-1" style="display:none;"></div>
+      <div id="loginSuccess" class="success-message" role="status" style="display:none;"></div>
+      
+      <div class="signup-link">
+        Don't have an account? <a href="signup.html">Sign up here</a>
+      </div>
+    </form>
+    <div class="guest-option">
+      <div class="auth-divider"><span>Just browsing?</span></div>
+      <a class="guest-button" href="MainMenu.html">Continue as guest <span aria-hidden="true">→</span></a>
+      <p>Explore the menu. Sign in when you're ready to order.</p>
+    </div>
+    
+    <!-- Forgot Password Form -->
+    <div class="forgot-container" id="forgotContainer" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+      <button type="button" class="close-btn" id="closeForgot" aria-label="Close login assistance">
+        <i class="fas fa-times"></i>
+      </button>
+      <h2 id="help-title">Login assistance</h2>
+      <p>Password recovery email is not configured for this portfolio demo. Contact the café administrator for help.</p>
+      <a class="login-btn" href="mailto:info@greensprout.com" style="display:block;text-align:center;text-decoration:none;">Contact administrator</a>
+    </div>
+  </main>
+
+  <script src="assets/js/auth-forms.js?v=release5"></script>
+</body>
+</html>

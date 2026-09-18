@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('node:assert/strict');
-const catalog = require('../assets/js/catalog-model.js');
+const catalog = require('../public/assets/js/catalog-model.js');
 const dish = {name:'Avocado Toast',description:'Sourdough with poached eggs',category:'Breakfast'};
 assert.equal(catalog.matches(dish, 'toast eggs'), true);
 assert.equal(catalog.matches(dish, ' BREAKFAST   avocado '), true);

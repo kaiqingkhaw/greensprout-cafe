@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(__dirname, '..', 'public');
 let checked = 0;
 const names = fs.readdirSync(root).concat(fs.readdirSync(path.join(root,'assets','js')).map(name => 'assets/js/' + name));
 for (const name of names) {

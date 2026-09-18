@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Sprout Café | Organic & Fresh</title>
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/home.css?v=organized1">
+    <link rel="stylesheet" href="assets/css/customer-theme.css?v=consistent2">
+  <script src="assets/js/api-client.js?v=portfolio1"></script>
+  <link rel="stylesheet" href="assets/css/responsive.css?v=consistent2">
+  <link id="shared-header-style" rel="stylesheet" href="assets/css/header.css?v=audit6">
+  <meta name="description" content="Meet GreenSprout Café: explore colourful breakfasts, comforting mains, drinks and desserts in this full-stack café portfolio project.">
+  <meta name="theme-color" content="#244e39">
+  <link rel="stylesheet" href="assets/css/storefront.css?v=portfolio7">
+  <script src="assets/js/storefront.js?v=portfolio7" defer></script>
+</head>
+<body class=" storefront ">
+<a class="skip-link" href="#main-content">Skip to content</a>    
+<!-- Header -->
+<header class="customer-header">
+        <a class="logo" href="MainMenu.html" aria-label="GreenSprout home"><span>GreenSprout</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="MainMenu.html" class="active" aria-current="page">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="About.us.html">About Us</a>
+        </nav>
+        <div class="header-icons">
+            <a href="profile.php" class="icon-button" title="My account" aria-label="My account"><i class="fas fa-user" aria-hidden="true"></i></a>
+            <a href="menu.html?view=cart" class="icon-button" title="Cart" aria-label="Cart"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            <a href="logout.php" class="logout-btn" title="Sign out" aria-label="Sign out"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a>
+        </div>
+    </header>
+
+<main id="main-content">
+    <section class="home-hero" aria-labelledby="home-title">
+        <div>
+            <span class="eyebrow">Welcome to GreenSprout Café</span>
+            <h1 id="home-title">Good food.<br>A <em>greener</em><br>kind of day.</h1>
+            <p>Breakfast, bowls and something sweet. Choose a dish and make it yours.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="menu.html">Explore the menu <span aria-hidden="true">↗</span></a>
+                <a class="story-link" href="About.us.html">Our café story</a>
+            </div>
+            <p class="hero-note">Breakfast · Mains · Drinks · Desserts</p>
+        </div>
+        <div class="hero-visual">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Fresh café ingredients">
+                <source src="assets/videos/cafe-hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-caption"><strong>Fresh ideas. Simple food.</strong>The GreenSprout café concept.</div>
+        </div>
+    </section>
+    <div class="cafe-strip"><span>Fresh inspiration</span><span>Made for your everyday</span><span>Find your new favourite</span></div>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="section-title">
+            <h2>A few café favourites</h2>
+            <p>Explore the menu, starting here.</p>
+        </div>
+                
+        <div class="menu-items" id="home-products" aria-live="polite"><p>Loading café favourites…</p></div>
+        <script src="assets/js/home-menu.js?v=portfolio7" defer></script>
+        <div class="view-menu-btn-container" style="text-align: center; margin-top: 50px;">
+            <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+<section class="our-story-section">
+    <div class="section-title" style="margin-bottom: 20px;">
+        <h2>About GreenSprout</h2>
+        <p>A café concept with a simple way to order.</p>
+    </div>
+    
+    <div class="our-story-container">
+        <div class="video-side">
+            <video autoplay muted loop playsinline class="story-video">
+                <source src="assets/videos/menu-feature.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="text-side">
+            <p>
+                GreenSprout started as a university café project. Browse the menu, customise your dishes
+                and follow each order from your account.
+            </p>
+            <a class="story-menu-link" href="About.us.html">Our story <span aria-hidden="true">↗</span></a>
+        </div>
+    </div>
+</section>
+
+    <!-- Promotions Section -->
+    <section class="promotions">
+        <div class="section-title" style="text-align: center; margin-bottom: 30px;">
+            <h2>On the menu</h2>
+            <p>Breakfast to lunch, with a little extra.</p>
+        </div>
+
+        <div class="promo-container">
+            <!-- Promo Card 1 -->
+            <div class="promo-card">
+                <div class="promo-img" style="background-image: url('assets/images/harvest-bowl.jpg');"></div>
+                <div class="promo-content">
+                    <h3>ORGANIC10</h3>
+                    <p>Up to RM10 off your food subtotal with code ORGANIC10. Demo offer.</p>
+                </div>
+            </div>
+
+            <!-- Promo Card 2 -->
+            <div class="promo-card">
+                <div class="promo-img" style="background-image: url('assets/images/breakfast-table.jpg');"></div>
+                <div class="promo-content">
+                    <h3>Start with breakfast</h3>
+                    <p>Explore toast and breakfast favourites.</p>
+                </div>
+            </div>
+
+            <!-- Promo Card 3 -->
+            <div class="promo-card">
+                <div class="promo-img" style="background-image: url('assets/images/lunch-bowl.jpg');"></div>
+                <div class="promo-content">
+                    <h3>Your lunch break</h3>
+                    <p>Pair a bowl with a refreshing drink.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave a Review Section -->
+<section class="review-section">
+    <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+        <h2>Share Your Experience</h2>
+        <p>We'd love to hear your thoughts about Green Sprout Café</p>
+    </div>
+    
+    <div class="review-container">
+        <form id="review-form" class="review-form" onsubmit="event.preventDefault(); submitReview();">
+            <div style="margin-bottom: 20px;">
+                <p id="review-account-note" style="font-size:14px;color:#607067;line-height:1.7">Reviews use your profile name. <a href="login.html">Sign in</a> to share your experience.</p>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Your Rating</label>
+                <div id="rating-stars">
+                    <i class="far fa-star" data-rating="1" aria-label="Rate 1 out of 5 stars" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();this.click();}" onmouseover="hoverStar(1)" onmouseout="resetStars()" onclick="setRating(1)"></i>
+                    <i class="far fa-star" data-rating="2" aria-label="Rate 2 out of 5 stars" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();this.click();}" onmouseover="hoverStar(2)" onmouseout="resetStars()" onclick="setRating(2)"></i>
+                    <i class="far fa-star" data-rating="3" aria-label="Rate 3 out of 5 stars" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();this.click();}" onmouseover="hoverStar(3)" onmouseout="resetStars()" onclick="setRating(3)"></i>
+                    <i class="far fa-star" data-rating="4" aria-label="Rate 4 out of 5 stars" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();this.click();}" onmouseover="hoverStar(4)" onmouseout="resetStars()" onclick="setRating(4)"></i>
+                    <i class="far fa-star" data-rating="5" aria-label="Rate 5 out of 5 stars" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();this.click();}" onmouseover="hoverStar(5)" onmouseout="resetStars()" onclick="setRating(5)"></i>
+                    <span id="rating-text"></span>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <label for="review-text" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Review</label>
+                <textarea id="review-text" placeholder="Share your experience with us..." required minlength="3" maxlength="1000" style="width: 100%; height: 120px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+            
+            <button type="submit" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; border: none; padding: 14px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s; width: 100%; font-size: 16px;">
+                Submit Review
+            </button>
+            
+            <div id="review-success">
+                <i class="fas fa-check-circle" style="font-size: 20px; margin-right: 8px;"></i>
+                <span>Thank you for your review! It has been submitted successfully.</span>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Display submitted reviews -->
+    <div id="user-reviews-container">
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Recent Reviews</h3>
+        <div id="user-reviews" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <!-- Reviews will be loaded here dynamically -->
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    </main>
+<footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Green Sprout Café</h3>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">Breakfast, bowls, drinks and desserts.</p>
+                <p class="portfolio-note">University portfolio project.<br>Demo café · No real payments.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="MainMenu.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="About.us.html">About Us</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="footer-links">
+                    <a href="tel:+60123456789"><i class="fas fa-phone"></i> +60 12-345 6789</a>
+                    <a href="mailto:info@greensprout.com"><i class="fas fa-envelope"></i> info@greensprout.com</a>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Bukit+Bintang+Kuala+Lumpur" target="_blank"><i class="fas fa-map-marker-alt"></i> Lot NO. 251, Jalan bukit Bintang, 55100 Kuala Lumpur, Malaysia</a>
+                </div>
+            </div>
+            
+            <div class="footer-column newsletter">
+<h3>Visit the café</h3>
+<p>Monday–Sunday<br>8:00 AM–9:00 PM</p>
+<a href="About.us.html">Location &amp; contact details →</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 GreenSprout Café. University portfolio project.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <button type="button" class="chat-launcher" onclick="toggleChat()" aria-controls="chat-popup" aria-expanded="false">
+        <span class="chat-icon" aria-hidden="true"><i class="far fa-comment-dots"></i></span>
+        <span class="chat-text">Café help</span>
+    </button>
+
+    <div class="chat-popup" id="chat-popup" role="dialog" aria-label="GreenSprout support assistant" aria-hidden="true">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <div class="bot-info">
+                    <div class="chat-logo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="chat-header-text">
+                        <strong>GreenSprout café help</strong>
+                        <div class="status">
+                            
+                            <span>Automated help · not live support</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="close-btn" onclick="toggleChat()" aria-label="Close support chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-body" id="chat-body">
+            <div class="timestamp" id="current-time"></div>
+            
+            <div class="bot-message">
+                <div class="message-content">
+                    Welcome to GreenSprout. What can I help you find today? Choose a topic or type a question below.
+                </div>
+            </div>
+            <div id="quick-replies" aria-label="Suggested questions">
+                <button class="quick-reply" onclick="sendQuickReply('Browse the menu')">
+                    Browse the menu
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('How ordering works')">
+                    How ordering works
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('Opening hours')">
+                    Opening hours
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('Vegan options')">
+                    Vegan options
+                </button>
+                <button class="quick-reply" onclick="sendQuickReply('Where is my order?')">
+                    Track an order
+                </button>
+            </div>
+            
+            <!-- Typing Indicator (hidden initially) -->
+            <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <span>Green Sprout Bot is typing...</span>
+            </div>
+        </div>
+        
+        <div class="chat-footer">
+            <p class="chat-disclosure">Automated FAQ · Messages stay on this page. <a href="About.us.html#contactForm">Contact form</a></p>
+            <div class="chat-input-container" id="chat-input-box">
+                <input type="text" id="user-input" placeholder="Ask a question..." aria-label="Chat message">
+                <button type="button" class="send-btn" onclick="sendUserMessage()" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check login status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+
+            updateTimestamp();
+            updateCartCount();
+            
+            // Set up profile link hover
+            const profileLink = document.getElementById('profile-link');
+            if (profileLink) {
+                profileLink.addEventListener('mouseenter', function() {
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'profile-tooltip';
+                    tooltip.textContent = this.title;
+                    this.appendChild(tooltip);
+                });
+                profileLink.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('.profile-tooltip');
+                    if (tooltip) this.removeChild(tooltip);
+                });
+            }
+
+            // Load sample reviews
+            loadCustomerReviews();
+        });
+
+
+
+        // Update cart count
+        function updateCartCount() {
+            // In a real app, you would fetch this from your backend
+            let cartCount = 0;
+            try { cartCount = (JSON.parse(sessionStorage.getItem('greensprout-cart') || '{}').cart || []).reduce((sum,item) => sum + item.quantity, 0); } catch {}
+            const cartCountElement = document.getElementById('cart-count');
+            
+            if (cartCountElement) {
+                if (cartCount > 0) {
+                    cartCountElement.textContent = cartCount;
+                    cartCountElement.style.display = 'flex';
+                } else {
+                    cartCountElement.style.display = 'none';
+                }
+            }
+        }
+
+        // Update timestamp
+        function updateTimestamp() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            const timestampElement = document.getElementById('current-time');
+            if (timestampElement) {
+                timestampElement.textContent = time;
+            }
+        }
+
+        // Review System
+        let currentRating = 0;
+        let hoverRating = 0;
+
+        function hoverStar(rating) {
+            hoverRating = rating;
+            updateStars();
+        }
+
+        function resetStars() {
+            hoverRating = 0;
+            updateStars();
+        }
+
+        function setRating(rating) {
+            currentRating = rating;
+            updateStars();
+            updateRatingText();
+        }
+
+        function updateStars() {
+            const stars = document.querySelectorAll('#rating-stars i');
+            const ratingToShow = hoverRating || currentRating;
+            
+            stars.forEach(star => {
+                const starRating = parseInt(star.getAttribute('data-rating'));
+                if (starRating <= ratingToShow) {
+                    star.className = 'fas fa-star';
+                    star.style.color = '#FFC107';
+                } else {
+                    star.className = 'far fa-star';
+                    star.style.color = '#ddd';
+                }
+            });
+        }
+
+        function updateRatingText() {
+            const ratingText = document.getElementById('rating-text');
+            if (!ratingText) return;
+            
+            const texts = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            ratingText.textContent = currentRating ? texts[currentRating] : '';
+        }
+
+       function submitReview() {
+    const button = document.querySelector('#review-form button[type="submit"]');
+    if (button.disabled) return;
+    const review = document.getElementById('review-text').value.trim();
+
+    if (!currentRating) {
+        GS.notify('Please select a rating');
+        return;
+    }
+
+    if (review.length < 3 || review.length > 1000) {
+        GS.notify('Write a review between 3 and 1,000 characters.');
+        return;
+    }
+
+    // Prepare review data
+    const reviewData = {
+        rating: currentRating,
+        review: review
+    };
+
+    button.disabled = true;
+    // The server owns reviewer identity; do not preview an arbitrary typed name.
+    GS.fetch('submit_review.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            loadCustomerReviews();
+
+            document.getElementById('review-success').style.display = 'block';
+
+            // Reset form
+            document.getElementById('review-text').value = '';
+            currentRating = 0;
+            updateStars();
+            updateRatingText();
+
+            setTimeout(() => {
+                document.getElementById('review-success').style.display = 'none';
+            }, 5000);
+        } else {
+            GS.notify(data.error || 'Failed to submit review. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting review:', error);
+        GS.notify('Unable to submit your review. Your text is still here; please try again.');
+    }).finally(() => { button.disabled = false; });
+}
+
+
+        function addReviewToPage(reviewData) {
+            const container = document.getElementById('user-reviews');
+            if (!container.querySelector('.testimonial-card')) container.textContent = '';
+            const card = document.createElement('article');
+            card.className = 'testimonial-card';
+            const stars = document.createElement('p');
+            const rating = Math.max(1, Math.min(5, Number(reviewData.rating)));
+            stars.textContent = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+            stars.setAttribute('aria-label', rating + ' out of 5 stars');
+            const content = document.createElement('p');
+            content.textContent = reviewData.review;
+            const name = document.createElement('h4');
+            name.textContent = reviewData.name;
+            const date = document.createElement('p');
+            date.textContent = reviewData.date;
+            card.append(stars, content, name, date);
+            container.appendChild(card);
+        }
+
+        async function loadCustomerReviews() {
+            const container = document.getElementById('user-reviews');
+            container.textContent = 'Loading customer reviews…';
+            try {
+                const response = await GS.fetch('get_reviews.php');
+                if (!response.ok) throw new Error('Unavailable');
+                const data = await response.json();
+                container.textContent = '';
+                if (!data.reviews.length) container.textContent = 'No reviews yet. Share your first experience with us.';
+                data.reviews.forEach(addReviewToPage);
+            } catch (_) {
+                container.textContent = 'Reviews are temporarily unavailable. Please try again later.';
+            }
+        }
+
+        // Shared support widget behaviour is loaded below.
+    </script>
+    <script src="assets/js/support-chat.js?v=organized1"></script>
+</body>
+</html>

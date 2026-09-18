@@ -13,6 +13,6 @@ jobs:
       - name: JavaScript, asset and frontend regression checks
         run: npm test
       - name: PHP syntax
-        run: find . -name '*.php' -not -path './uploads/*' -print0 | xargs -0 -n1 php -l
+        run: find . -name '*.php' -not -path './public/uploads/*' -print0 | xargs -0 -n1 php -l
       - name: Bundled product photographs
         run: php tests/product-media.php

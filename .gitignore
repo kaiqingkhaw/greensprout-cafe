@@ -11,9 +11,9 @@ backups/
 !database/schema.sql
 .idea/
 .vscode/
-uploads/*
-!uploads/.gitkeep
-!uploads/.htaccess
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
 *.log
 .DS_Store
 Thumbs.db

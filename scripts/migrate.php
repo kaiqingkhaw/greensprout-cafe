@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }
-require_once dirname(__DIR__) . '/config.php';
+require_once dirname(__DIR__) . '/app/config.php';
 $conn = db();
 $conn->query('CREATE TABLE IF NOT EXISTS request_limits (bucket CHAR(64) PRIMARY KEY, hits INT UNSIGNED NOT NULL, expires_at BIGINT UNSIGNED NOT NULL, INDEX (expires_at)) ENGINE=InnoDB');
 if ($conn->query("SHOW COLUMNS FROM order_items LIKE 'special_request'")->num_rows === 0) {
