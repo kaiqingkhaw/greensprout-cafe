@@ -36,23 +36,13 @@ Start with [the menu page](public/menu.html), [checkout handler](public/create_o
 
 Click a screenshot to view it at full size.
 
-| Menu | Login |
-| --- | --- |
-| [![Customer menu](docs/screenshots/menu.png)](docs/screenshots/menu.png) | [![Login](docs/screenshots/login.png)](docs/screenshots/login.png) |
+[![Menu, login, checkout and admin dashboard](docs/screenshots/desktop-showcase.png)](docs/screenshots/desktop-showcase.png)
 
-| Checkout | Admin dashboard |
-| --- | --- |
-| [![Demo checkout](docs/screenshots/checkout.png)](docs/screenshots/checkout.png) | [![Admin dashboard](docs/screenshots/admin.png)](docs/screenshots/admin.png) |
+[Menu](docs/screenshots/menu.png) · [Login](docs/screenshots/login.png) · [Checkout](docs/screenshots/checkout.png) · [Admin dashboard](docs/screenshots/admin.png)
 
 ### Mobile
 
-<table>
-  <tr><th width="50%">Customer menu</th><th width="50%">Product management</th></tr>
-  <tr>
-    <td align="center"><a href="docs/screenshots/menu-mobile.png"><img src="docs/screenshots/menu-mobile.png" alt="Customer menu on mobile" width="240"></a></td>
-    <td align="center"><a href="docs/screenshots/admin-mobile.png"><img src="docs/screenshots/admin-mobile.png" alt="Product management on mobile" width="240"></a></td>
-  </tr>
-</table>
+[![Customer menu and product management in phone frames](docs/screenshots/mobile-showcase.png)](docs/screenshots/mobile-showcase.png)
 
 [View the About page](docs/screenshots/about.png)
 
