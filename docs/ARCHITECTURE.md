@@ -1,28 +1,21 @@
-# Architecture
+# How the application works
 
-GreenSprout is a small PHP application with MySQL storage and vanilla JavaScript. It keeps the original page-based design of the university project.
+## Pages and shared code
 
-## Boundaries
+`public/` holds the HTML pages, PHP request handlers and browser assets. The `admin_*.php` pages check the signed-in user's role before displaying data or accepting changes.
 
-- **public/** contains the browser entry points. Customer pages include `MainMenu.html`, `menu.html`, authentication and profile pages. The `admin_*.php` pages require an administrator session.
-- **app/** contains PHP code loaded by the entry points: environment-backed database configuration, session and CSRF helpers, order payloads and product photo mapping. It is not a browser destination.
-- **database/** and **scripts/** own fresh installation and upgrades. Database changes are not performed by ordinary page requests.
-- **tests/** contains the executable checks. Historical review notes live in `docs/reviews/`.
+`app/config.php` contains the database connection, session handling and shared validation functions. The other files in `app/` format saved orders and map starter products to local photos.
 
-## Order flow
+## Checkout
 
-1. The menu loads products from `public/get_products.php`.
-2. A customer signs in, chooses products and enters delivery details.
-3. `public/create_order.php` validates the session, CSRF token and submitted fields. It reads product prices from MySQL and calculates the final amount on the server.
-4. The order and its line items are saved together. A unique checkout key protects repeated submissions.
-5. Invoice and tracking endpoints only return orders belonging to the signed-in customer. Administrators update saved order status from the operations page.
+1. `public/get_products.php` supplies the menu.
+2. JavaScript keeps the cart in the current browser tab.
+3. `public/create_order.php` checks the login session and CSRF token, validates delivery details, and reads current prices from MySQL.
+4. It saves the order and line items in one transaction. A unique checkout key prevents the same submission from creating a second order.
+5. Customers retrieve their own invoices and status through the order endpoints. Administrators update status through `public/admin_panel.php`.
 
-## Serving the application
+## Local setup and hosting
 
-For XAMPP, copy the entire repository into `htdocs/GreenSproutCafe-Portfolio` and visit its root URL. The root `index.php` redirects to `public/`. Apache redirects preserve the original root-level page bookmarks. For a dedicated host, serve `public/` directly; the application loads `app/` from its parent directory.
+The root `index.php` redirects XAMPP users to `public/`. Apache redirect rules preserve the original page URLs. On a dedicated server, use `public/` as the document root.
 
-The `app`, `database`, `scripts`, `tests`, `docs` and `.github` folders also deny direct Apache requests when the repository sits beneath XAMPP's document root. Profile uploads retain their own executable-file restrictions. PHP setup scripts additionally require CLI execution.
-
-## Deliberate limits
-
-Payments, delivery illustrations and contact submissions are demonstrations. They do not process money, provide GPS tracking or send email. This project does not use a frontend build system or a PHP framework; adding folders does not change those architectural choices.
+The remaining folders hold database setup, command-line tools, tests and documentation. Their Apache rules block direct browser access when the whole project is inside `htdocs`. `public/uploads/` has separate rules to prevent uploaded files from executing as PHP.

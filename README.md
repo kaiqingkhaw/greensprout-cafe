@@ -1,98 +1,71 @@
 # GreenSprout Café
 
-A café ordering application built with **PHP, MySQL and vanilla JavaScript**. Originally developed as a group university project, then redesigned and enhanced by Khaw Kai Qing as a personal portfolio edition.
+A café ordering website built with PHP, MySQL and JavaScript. Originally a group university project, later redesigned and extended by Khaw Kai Qing.
 
 [![Project checks](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml/badge.svg)](https://github.com/kaiqingkhaw/greensprout-cafe/actions/workflows/checks.yml)
 
 ## Features
 
-**Customers:** create an account, browse and filter dishes, add special requests, place demo orders, retrieve invoices and check order status.
+- Customer registration, login and profile editing
+- Menu search, category filters, cart and special requests
+- Demo checkout, saved invoices and order status
+- Admin product, customer, order and review management
+- Sales summaries and CSV exports
 
-**Administrators:** manage products, customers, orders and reviews; view date-filtered analytics; export records as CSV.
+## Source code
 
-- Server-calculated prices, saved order items and duplicate-request protection.
-- Role-checked sessions, password hashing, prepared statements and CSRF protection.
-- Validated profile image uploads and editable account details.
-- Keyboard-accessible controls, reduced-motion support and a remembered video pause preference.
-- Local starter food photos, with an illustration if a custom image fails.
+| Folder | Contents |
+| --- | --- |
+| [public/](public/) | HTML pages and PHP request handlers |
+| [public/assets/css/](public/assets/css/) | Stylesheets |
+| [public/assets/js/](public/assets/js/) | Frontend JavaScript |
+| [app/](app/) | Database connection, session helpers and shared PHP code |
+| [database/](database/) | MySQL schema and starter menu |
+| [scripts/](scripts/) | Admin account creation and database migration |
+| [tests/](tests/) | Automated tests |
 
-## Project background
-
-This repository is the revised portfolio edition of GreenSprout Café. The original café ordering system was a group assignment. My later work focuses on the customer and administrator interface redesign, functional improvements, validation, regression testing and project organisation.
-
-The current application demonstrates account management, server-validated checkout, saved invoices and administrator operations. It is a learning project with simulated payments; the original group work is not presented as a solo project.
+Start with [the menu page](public/menu.html), [checkout handler](public/create_order.php) or [admin dashboard](public/admin_home.php). [Architecture notes](docs/ARCHITECTURE.md) explain how they fit together.
 
 ## Screenshots
 
-### Sign in
+![Customer menu](docs/screenshots/menu.png)
 
-![Sign-in screen](docs/screenshots/login.png)
+![Admin dashboard](docs/screenshots/admin.png)
 
-### Customer menu
-
-![Menu and category filters](docs/screenshots/menu.png)
-
-### Admin workspace
-
-![Administrator dashboard](docs/screenshots/admin.png)
-
-### About
-
-![About GreenSprout](docs/screenshots/about.png)
-
-[Mobile product management](docs/screenshots/admin-mobile.png)
+[Login](docs/screenshots/login.png) · [About](docs/screenshots/about.png) · [Mobile admin](docs/screenshots/admin-mobile.png)
 
 ## Run locally
 
-Requires PHP 8.1+, MySQL or compatible MariaDB, and the `mysqli`, `mbstring` and `fileinfo` PHP extensions. Tested with XAMPP PHP 8.2.4. Node.js 22+ is needed only for the checks.
+Requires PHP 8.1+, MySQL/MariaDB, and the PHP `mysqli`, `mbstring` and `fileinfo` extensions. Tested using XAMPP with PHP 8.2.4.
 
-1. Copy this folder to `C:/xampp/htdocs/GreenSproutCafe-Portfolio`.
-2. Start **Apache** and **MySQL** in XAMPP.
-3. For a new installation, import `database/schema.sql` using phpMyAdmin.
-4. For an existing database, back it up and run `C:/xampp/php/php.exe scripts/migrate.php`. Do not re-import the starter schema over existing data.
-5. Open [the local site](http://localhost/GreenSproutCafe-Portfolio/). The entry point redirects to `public/`.
-6. Use Sign up for a customer account. Create an admin from the project directory:
+1. Copy the project into `C:/xampp/htdocs/GreenSproutCafe-Portfolio`.
+2. Start Apache and MySQL in XAMPP.
+3. For a new installation, import `database/schema.sql` through phpMyAdmin.
+4. Open [localhost/GreenSproutCafe-Portfolio](http://localhost/GreenSproutCafe-Portfolio/).
+5. Register a customer through the Sign up page.
+
+To create an administrator, run this from the project folder:
 
 ```powershell
 C:/xampp/php/php.exe scripts/create_admin.php your_admin admin@example.com "YOUR_UNIQUE_PASSWORD"
 ```
 
-Use at least 12 characters for the admin password. No account passwords are bundled.
+Use a password of at least 12 characters. Account passwords are not included in this repository.
 
-Database settings use server environment variables: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` and `DB_PASSWORD`. `.env.example` lists the keys; the app does not automatically load `.env` files. Defaults target local XAMPP.
+Database defaults work with a standard local XAMPP setup. For other environments, configure the server variables listed in [.env.example](.env.example). The app does not automatically read `.env` files.
 
-## Project structure
+For an existing installation, back up the database and run `C:/xampp/php/php.exe scripts/migrate.php` instead of importing the starter schema again. For deployment, point the web server at `public/`. PHP and MySQL are required; GitHub Pages cannot run the backend.
 
-```text
-greensprout-cafe/
-├── app/                Shared PHP configuration and order/media helpers
-├── public/             Website pages, endpoints and browser assets
-│   ├── assets/
-│   │   ├── css/        Stylesheets
-│   │   ├── js/         Customer and admin behaviour
-│   │   ├── images/     Food photos, logo and placeholders
-│   │   ├── videos/     Café videos
-│   │   └── vendor/     Font Awesome and its license
-│   └── uploads/        Local profile photos (ignored by Git)
-├── database/           Starter database schema
-├── scripts/            CLI database migration and admin creation
-├── tests/              Automated regression checks
-├── docs/               Screenshots, architecture and review notes
-└── .github/workflows/  Automated checks on GitHub
-```
+## Tests
 
-See [architecture and request flow](docs/ARCHITECTURE.md) for the main components.
-
-## Checks
-
-Frontend checks need no package installation:
+With Node.js 22+ and PHP available:
 
 ```sh
 npm test
 php tests/product-media.php
 ```
 
-The full localhost suite creates and removes its own temporary records:
+With the local Apache/MySQL installation running:
 
 ```powershell
 $env:ALLOW_TEST_WRITES = "1"
@@ -100,20 +73,14 @@ npm run test:http
 npm run test:structure
 ```
 
-Latest results: **106 HTTP checks**, **25 desktop/mobile page checks**, **15 structure checks**, and a complete customer-to-admin order journey. See the [verification report](docs/reviews/QA-2026-09-18.md) for coverage and limits.
+The HTTP suite creates temporary test records and removes them afterward. GitHub Actions runs frontend tests and PHP checks on every push.
 
-GitHub Actions runs frontend checks, PHP syntax checks and the bundled-photo test on pushes and pull requests.
+## Limitations
 
-## Demo scope
+Payments are simulated, tracking shows saved order status rather than GPS, and contact messages are stored without sending email. Password-reset email is not implemented. Profile photos and database credentials stay outside Git.
 
-- Card and wallet payments are simulated. No real payment details or money are collected.
-- Order tracking shows saved café status; it is not live GPS.
-- Contact messages are stored in MySQL. Email delivery and password-reset email are not configured.
-- Cart drafts are stored in the current browser tab. Orders and invoices are saved in the database.
-- Profile uploads accept JPG/PNG/GIF up to 2 MB and 6000 pixels per side. Previous photos are retained when replaced.
+## Credits
 
-For a live deployment, set the web server document root to `public/` so `app/`, database scripts and development files stay outside the web root. A live deployment needs PHP and MySQL; GitHub Pages alone cannot run this backend. Configure HTTPS, restricted database credentials and equivalent upload protection when using a server other than Apache. Keep local credentials, customer uploads and database dumps out of the repository.
+The original application was developed as a group assignment. My later revision covers the interface redesign, feature improvements, validation, tests and repository organisation.
 
-## Media credits
-
-Food photographs are from Unsplash; [file sources and license](public/assets/images/CREDITS.md) are included. Font Awesome Free 6.4.0 is bundled with its [upstream license](public/assets/vendor/fontawesome/LICENSE.txt). Original café videos and the logo are retained from the university project.
+Food photos: [Unsplash sources](public/assets/images/CREDITS.md). Icons: [Font Awesome Free license](public/assets/vendor/fontawesome/LICENSE.txt). Café videos and the logo are from the original university project.
