@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the menu | GreenSprout Café</title>
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/menu.css?v=enhance12">
+    <link rel="stylesheet" href="assets/css/customer-theme.css?v=consistent2">
+  <script src="assets/js/api-client.js?v=portfolio1"></script>
+  <link rel="stylesheet" href="assets/css/responsive.css?v=consistent2">
+  <link id="shared-header-style" rel="stylesheet" href="assets/css/header.css?v=polish9">
+  <link rel="stylesheet" href="assets/css/account-checkout.css?v=polish9">
+  <meta name="description" content="Browse GreenSprout Café dishes, search the menu, customise your cart and explore a complete demo ordering experience.">
+  <meta name="theme-color" content="#244e39">
+  <link rel="stylesheet" href="assets/css/storefront.css?v=portfolio7">
+  <link rel="stylesheet" href="assets/css/experience-polish.css?v=portfolio7">
+  <script src="assets/js/storefront.js?v=portfolio7" defer></script>
+</head>
+<body class="customer-menu storefront ">
+<a class="skip-link" href="#menu">Skip to content</a>
+
+    <!-- Header -->
+<header class="customer-header">
+        <a class="logo" href="MainMenu.html" aria-label="GreenSprout home"><span>GreenSprout</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="MainMenu.html">Home</a>
+            <a href="menu.html" class="active" aria-current="page">Menu</a>
+            <a href="About.us.html">About Us</a>
+        </nav>
+        <div class="header-icons">
+            <a href="profile.php" class="icon-button" title="My account" aria-label="My account"><i class="fas fa-user" aria-hidden="true"></i></a>
+            <a href="menu.html?view=cart" class="icon-button" title="Cart" aria-label="Cart"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            <a href="logout.php" class="logout-btn" title="Sign out" aria-label="Sign out"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="eyebrow">Something for every appetite</span><h1>Find your next favourite.</h1>
+        <p>Browse the menu and build your order. Demo delivery within Kuala Lumpur.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+    </div>
+    <a href="#menu" class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</section>
+
+<div class="container">
+    <!-- Navigation buttons and other content -->
+    <nav class="main-nav">
+        <button id="menu-btn" class="nav-btn active"><i class="fas fa-utensils"></i> Menu</button>
+        <button id="cart-btn" class="nav-btn cart-badge">
+            <i class="fas fa-shopping-cart"></i> Cart
+            <span class="badge" id="cart-count">0</span>
+        </button>
+        <button id="invoice-btn" class="nav-btn"><i class="fas fa-receipt"></i> Invoice</button>
+        <button id="tracking-btn" class="nav-btn"><i class="fas fa-truck"></i> Tracking</button>
+    </nav>
+
+        <!-- Menu Page -->
+        <section id="menu-page">
+            <div class="menu-container">
+                <aside class="sidebar">
+                    <section class="filter-section">
+                        <h2>Find something delicious</h2>
+                        <div class="search-container">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="searchInput" placeholder="Search dishes..." aria-label="Search menu dishes">
+                        </div>
+                        <div class="filter-group sort-group"><label for="sortMenu"><i class="fas fa-arrow-down-wide-short"></i> Sort dishes</label><select id="sortMenu"><option value="featured">Featured first</option><option value="name">Name A–Z</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div>
+                        <div class="filter-group category-filters">
+                            <h3>Categories</h3>
+                            <ul role="radiogroup" aria-label="Menu category">
+                                <li role="none"><input type="radio" name="menuCategory" id="all-categories" value="all" checked> <label for="all-categories">All</label></li>
+                                <li role="none"><input type="radio" name="menuCategory" id="breakfast" value="Breakfast"> <label for="breakfast">Breakfast</label></li>
+                                <li role="none"><input type="radio" name="menuCategory" id="mains" value="Mains"> <label for="mains">Mains</label></li>
+                                <li role="none"><input type="radio" name="menuCategory" id="drinks" value="Drinks"> <label for="drinks">Drinks</label></li>
+                                <li role="none"><input type="radio" name="menuCategory" id="desserts" value="Desserts"> <label for="desserts">Desserts</label></li>
+                            </ul>
+                        </div>
+                        <div class="filter-group offer-filters">
+                            <h3>Show only</h3>
+                            <ul>
+                                <li><input type="checkbox" id="featured"> <label for="featured">Featured Items</label></li>
+                                <li><input type="checkbox" id="discounted"> <label for="discounted">Discounted</label></li>
+                            </ul>
+                        </div>
+                        <button type="button" id="clearFilters" class="clear-filters"><i class="fas fa-rotate-left"></i> Reset filters</button>
+                    </section>
+                    
+                </aside>
+
+                <main class="products-section" id="menu">
+                    <h2>On the menu</h2>
+                    <p class="intro-text">Select a dish for details and options.</p>
+                    <p id="menuResultCount" class="menu-result-count" role="status" aria-live="polite"></p>
+                    
+                    <div class="loader" id="loader">
+                        <div class="loader-spinner"></div>
+                        <p>Loading fresh organic meals...</p>
+                    </div>
+                    
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Cart Page -->
+        <section id="cart-page">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+                    <p>Items: <span id="total-items">0</span></p>
+                </div>
+                
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" id="step1">1</div>
+                    <div class="step" id="step2">2</div>
+                    <div class="step" id="step3">3</div>
+                </div>
+                <div class="step-labels">
+                    <div class="step-label">Cart</div>
+                    <div class="step-label">Delivery Info</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                
+                <!-- Step 1: Cart Items -->
+                <div class="cart-step active" id="cart-step">
+                    <div class="cart-items" id="cart-items">
+                        <!-- Items will be added here dynamically -->
+                    </div>
+
+                    <div class="cart-summary" id="cart-summary">
+                        <div class="discount-section">
+                            <h3><i class="fas fa-tag"></i> Apply Discount</h3>
+                            <div class="discount-input">
+                                <input type="text" id="discountCode" placeholder="Enter discount code">
+                                <button id="applyDiscount">Apply</button>
+                            </div>
+                            <p id="discountMessage" style="margin-top: 10px; color: #2e8b57; display: none;"></p>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">RM0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee:</span>
+                            <span id="delivery">RM5.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Service Charge (5%):</span>
+                            <span id="service">RM0.00</span>
+                        </div>
+                        <div class="summary-row" id="discountRow" style="display: none;">
+                            <span>Discount:</span>
+                            <span id="discount">-RM0.00</span>
+                        </div>
+                        <div class="summary-row summary-total">
+                            <span>Total:</span>
+                            <span id="total">RM5.00</span>
+                        </div>
+
+                        <button id="checkout-btn" class="checkout-btn">Proceed to Delivery</button>
+
+                        <p class="checkout-footnote"><i class="fas fa-lock" aria-hidden="true"></i> Cash, card &amp; e-wallet · demonstration checkout</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Delivery Information -->
+                <div class="cart-step" id="delivery-step">
+                    <div class="restaurant-info">
+                        <div class="restaurant-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div>
+                            <h3>Our Restaurant Location</h3>
+                            <p>Lot NO. 251, Jalan Bukit Bintang, 55100 Kuala Lumpur, Malaysia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-form">
+                        <h3><i class="fas fa-truck"></i> Delivery Information</h3>
+                        <form id="deliveryForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="required" for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label class="required" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="required" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+60 12-345 6789">
+                                </div>
+                                <div class="form-group">
+                                    <label for="addressType">Address Type</label>
+                                    <select id="addressType" name="addressType">
+                                        <option value="home">Home</option>
+                                        <option value="work">Work</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="required" for="address">Delivery Address</label>
+                                    <textarea id="address" name="address" required placeholder="123 Green Street, Kuala Lumpur, 50450"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="specialInstructions">Special Instructions</label>
+                                    <textarea id="specialInstructions" name="specialInstructions" placeholder="Any specific delivery instructions?"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="distance-calculator">
+                                <h4><i class="fas fa-map-marker-alt"></i> Delivery area & fee</h4>
+                                <p>Flat RM5 demo delivery within Kuala Lumpur.</p>
+                                <div class="distance-result">
+                                    <span>Delivery area:</span>
+                                    <span class="distance-value" id="distance-value">Kuala Lumpur</span>
+                                </div>
+                                <div class="delivery-fee-display">
+                                    Delivery Fee: <span id="delivery-fee">RM5.00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label" for="saveAddress"><input type="checkbox" id="saveAddress" name="saveAddress"><span>Save this address for future orders</span></label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="back-btn" id="back-to-cart"><i class="fas fa-arrow-left"></i> Back to Cart</button>
+                                <button type="button" class="save-btn" id="save-delivery">Save & Continue to Payment <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Payment -->
+                <div class="cart-step" id="payment-step">
+                    <div class="delivery-form">
+                        <span class="eyebrow">THE FINAL TOUCH</span><h3>How would you like to pay?</h3><p class="payment-intro">Review your payment choice before placing your demo order.</p><p class="checkout-notice"><strong>Portfolio sandbox</strong> · No money is charged. Use the supplied test details only.</p>
+                        
+                        <div class="form-group">
+                            <label class="required">Select Payment Method</label>
+                            <div class="payment-options">
+
+
+                                <button type="button" class="payment-card selected" data-method="cash" aria-pressed="true">
+                                    <i class="fas fa-money-bill-wave fa-2x"></i>
+                                    <p>Cash</p><small>On delivery</small>
+                                </button>
+                                <button type="button" class="payment-card" data-method="card_demo" aria-pressed="false"><i class="fas fa-credit-card fa-2x" aria-hidden="true"></i><p>Debit / credit card</p><small>Test card only</small></button>
+                                <button type="button" class="payment-card" data-method="ewallet_demo" aria-pressed="false"><i class="fas fa-wallet fa-2x" aria-hidden="true"></i><p>E-wallet</p><small>Simulated checkout</small></button>
+                            </div>
+                        </div>
+                        
+                        <div id="cash-panel" class="payment-detail"><i class="fas fa-money-bill-wave" aria-hidden="true"></i><div><strong>Pay when it arrives</strong><p>Your order will be recorded as cash on delivery. This portfolio does not arrange a real delivery.</p></div></div>
+                        <div id="card-panel" class="card-entry" hidden>
+                            <div class="card-entry-heading"><h4>Card details</h4><span class="test-badge">TEST MODE</span></div>
+                            <p class="test-instruction">Try the card form with our sample details. Never enter a real card.</p>
+                            <button type="button" id="fill-test-card" class="fill-test">Use test card <span>4242 •••• 4242 →</span></button>
+                            <div class="card-fields">
+                                <div class="card-field wide"><label for="demo-card-name">Name on card</label><input id="demo-card-name" type="text" placeholder="TEST CUSTOMER" autocomplete="off" maxlength="60"></div>
+                                <div class="card-field wide"><label for="demo-card-number">Card number</label><input id="demo-card-number" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="off" maxlength="19" aria-describedby="card-help"></div>
+                                <div class="card-field"><label for="demo-card-expiry">Expiry date</label><input id="demo-card-expiry" type="text" inputmode="numeric" placeholder="MM / YY" autocomplete="off" maxlength="7"></div>
+                                <div class="card-field"><label for="demo-card-cvc">Security code</label><input id="demo-card-cvc" type="password" inputmode="numeric" placeholder="123" autocomplete="off" maxlength="3"></div>
+                            </div>
+                            <p id="card-help" class="card-help"><i class="fas fa-shield-alt" aria-hidden="true"></i> Test fields stay in this page. They are never sent or saved.</p>
+                            <p id="card-error" class="card-error" role="alert" hidden></p>
+                        </div>
+                        <div id="wallet-panel" class="card-entry wallet-entry" hidden>
+                            <div class="card-entry-heading"><h4><i class="fas fa-wallet" aria-hidden="true"></i> Demo wallet</h4><span class="test-badge">SANDBOX</span></div>
+                            <p class="test-instruction">Practise approving a wallet checkout. No app, account or real money is needed.</p>
+                            <div class="wallet-receipt"><span>GreenSprout Café</span><strong id="wallet-amount">RM0.00</strong><small>Demo order total · includes service and delivery</small></div>
+                            <button type="button" id="approve-demo-wallet" class="wallet-approve">Simulate wallet approval <span aria-hidden="true">→</span></button>
+                            <p id="wallet-status" class="wallet-status" role="status">Awaiting demo approval</p>
+                            <p class="card-help">This is not connected to a payment provider. After approval, select “Place demo order” to save your order.</p>
+                        </div>
+
+                        
+                        <div class="form-actions">
+                            <button type="button" class="back-btn" id="back-to-delivery"><i class="fas fa-arrow-left"></i> Back to Delivery</button>
+                            <button type="button" class="pay-now-btn" id="pay-now">Place demo order <i class="fas fa-lock"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invoice Page -->
+        <section id="invoice-page">
+            <div class="invoice-container">
+                <div class="invoice-header">
+                    <h2><i class="fas fa-receipt"></i> Order Invoice</h2>
+                    <p id="invoice-status-message">Thank you for your order!</p>
+                </div>
+                
+                <!-- Empty invoice message -->
+                <div class="empty-cart" id="empty-invoice">
+                    <i class="fas fa-receipt"></i>
+                    <p>You haven't placed any orders yet.</p>
+                    <button id="shop-now" class="back-to-menu" style="margin-top: 20px;"><i class="fas fa-shopping-basket"></i> Shop Now</button>
+                </div>
+                
+                <!-- Invoice details (displayed after successful payment) -->
+                <div id="invoice-details" style="display: none;">
+                    <!-- Will be filled with order details -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tracking Page -->
+        <section id="tracking-page">
+            <div class="empty-tracking" id="empty-tracking">
+                <i class="fas fa-truck"></i>
+                <p>You haven't placed any orders yet. Your order history is empty.</p>
+                <button id="tracking-shop-now" class="back-to-menu" style="margin-top: 20px;">
+                    <i class="fas fa-shopping-basket"></i> Shop Now
+                </button>
+            </div>
+            <div class="tracking-container" id="tracking-content" style="display:none;">
+                <div class="tracking-header">
+                    <h2><i class="fas fa-map-marker-alt"></i> Order status</h2>
+                    <div class="order-number" id="tracking-order-number">Order #: </div>
+                </div>
+                <div class="eta">
+                    Current status: <span id="delivery-time" aria-live="polite">Checking your order…</span>
+                </div>
+                <p class="tracking-update" id="tracking-update" role="status">Checking for updates…</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 45%"></div>
+                </div>
+                <div class="status-indicators">
+                    <div class="status-item" id="status-placed">
+                        <div class="status-dot"></div>
+                        <div class="status-label">Order Placed</div>
+                        <div class="status-time" id="status-time-placed">--:-- --</div>
+                    </div>
+                    <div class="status-item" id="status-preparing">
+                        <div class="status-dot"></div>
+                        <div class="status-label">Preparing</div>
+                        <div class="status-time" id="status-time-preparing">--:-- --</div>
+                    </div>
+                    <div class="status-item" id="status-ontheway">
+                        <div class="status-dot"></div>
+                        <div class="status-label">Ready</div>
+                        <div class="status-time" id="status-time-ontheway">--:-- --</div>
+                    </div>
+                    <div class="status-item" id="status-delivered">
+                        <div class="status-dot"></div>
+                        <div class="status-label">Completed</div>
+                        <div class="status-time" id="status-time-delivered">--:-- --</div>
+                    </div>
+                </div>
+                <div class="order-map">
+                    <div class="map-overlay">
+                        <h3><i class="fas fa-location-dot"></i> Your order journey</h3>
+                        <p><span id="tracking-explanation">Waiting for the café to confirm your order.</span></p>
+                    </div>
+                    <div class="map">
+                        <div class="restaurant-marker"></div>
+                        <div class="destination-marker"></div>
+                        <div class="path-line"></div>
+                        <div class="rider-marker" id="rider-marker">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <a class="action-btn" href="About.us.html"><i class="fas fa-question-circle"></i> Contact the café</a>
+                    <button class="action-btn" id="refresh-tracking"><i class="fas fa-redo"></i> Refresh</button>
+                    <button id="back-to-menu-tracking" class="action-btn"><i class="fas fa-home"></i> Back to Menu</button>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+        <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Green Sprout Café</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">Breakfast, bowls, drinks and desserts.</p>
+            <p class="portfolio-note">University portfolio project.<br>Demo café · No real payments.</p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+                <a href="MainMenu.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="About.us.html">About Us</a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <div class="footer-links">
+                <a href="tel:+60123456789"><i class="fas fa-phone"></i> +60 12-345 6789</a>
+                <a href="mailto:info@greensprout.com"><i class="fas fa-envelope"></i> info@greensprout.com</a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Bukit+Bintang+Kuala+Lumpur" target="_blank"><i class="fas fa-map-marker-alt"></i> Lot NO. 251, Jalan bukit Bintang, 55100 Kuala Lumpur, Malaysia</a>
+            </div>
+        </div>
+        
+        <div class="footer-column newsletter">
+<h3>Visit the café</h3>
+<p>Monday–Sunday<br>8:00 AM–9:00 PM</p>
+<a href="About.us.html">Location &amp; contact details →</a>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2026 GreenSprout Café. University portfolio project.</p>
+    </div>
+</footer>
+
+        <!-- Product Detail Modal -->
+        <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+            <div class="modal-content">
+                <button type="button" class="close-modal" aria-label="Close product details">&times;</button>
+                <div class="breadcrumbs">
+                    <a href="#">Home</a> / <a href="#">All Products</a> / <span id="productBreadcrumb"></span>
+                </div>
+                
+                <div class="modal-nav">
+                    <button id="prevProduct"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <button id="nextProduct">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="product-detail">
+                    <h2 id="modalProductName"></h2>
+                    <div class="product-action">View details <span aria-hidden="true">→</span></div>
+                    <span class="price" id="modalProductPrice"></span>
+                    
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" min="1" value="1">
+                    </div>
+
+                    <div class="special-request">
+                        <label for="request">Special Requests (Optional)</label>
+                        <textarea id="request" placeholder="Any special instructions or allergies we should know about? (max 200 characters)" maxlength="200"></textarea>
+                        <small style="display:block; text-align:right; color:#777; margin-top:5px;">200 characters remaining</small>
+                    </div>
+                    
+                    <button id="addToCart">Add to Cart</button>
+                    
+                    <div class="nutrition-info">
+                        <h4><i class="fas fa-apple-alt"></i> Nutritional Information</h4>
+                        <div class="nutrition-details">
+                            <div class="nutrition-item">Calories: 320</div>
+                            <div class="nutrition-item">Protein: 15g</div>
+                            <div class="nutrition-item">Carbs: 45g</div>
+                            <div class="nutrition-item">Fats: 8g</div>
+                            <div class="nutrition-item">Fiber: 12g</div>
+                        </div>
+                    </div>
+                    
+                    <p class="description" id="modalProductDescription"></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to top button -->
+        <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Confirmation Modal -->
+        <div class="confirmation-modal" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="remove-item-title">
+            <div class="confirmation-box">
+                <h3><i class="fas fa-exclamation-circle" style="color:#ff6b6b; font-size:3rem; margin-bottom:20px;"></i></h3>
+                <h2 id="remove-item-title">Remove Item</h2>
+                <p>Are you sure you want to remove this item from your cart?</p>
+                <div class="confirmation-buttons">
+                    <button class="confirmation-btn confirm-yes" id="confirmRemove">Yes, Remove</button>
+                    <button class="confirmation-btn confirm-no" id="cancelRemove">Cancel</button>
+                </div>
+            </div>
+        </div>
+    
+    <script src="assets/js/tracking-model.js?v=organized1"></script>
+<script src="assets/js/demo-payment.js?v=polish9"></script>
+<script src="assets/js/catalog-model.js?v=portfolio1"></script>
+<script src="assets/js/menu.js?v=portfolio7"></script>
+</body>
+</html>

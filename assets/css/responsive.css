@@ -1,0 +1,65 @@
+/* Shared, narrowly scoped responsive repairs. Keep desktop branding unchanged. */
+header .nav-links a, header .nav-links a:visited { color:#fff; text-decoration:none; }
+@media (min-width:601px) and (max-width:1000px) {
+  .customer-menu .menu-container { flex-direction:column; gap:24px; }
+  .customer-menu .sidebar { width:100%; flex:auto; box-sizing:border-box; }
+  .customer-menu .sidebar ul { display:flex; flex-wrap:wrap; gap:12px 20px; }
+  .customer-menu .products-section { width:100%; padding:0 !important; }
+  .customer-menu .products-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 820px) {
+  body { min-width:0; }
+  body > header { width:100%; box-sizing:border-box; }
+  .customer-menu > .container { width:100%; min-width:0; }
+  .customer-menu .step-labels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); text-align:center; gap:4px; }
+  .customer-menu .step-label { font-size:13px; }
+  .customer-menu .discount-input { flex-wrap:wrap; gap:8px; }
+  .customer-menu .discount-input input { width:100%; min-width:0; flex:1 1 140px; }
+  header .logo { min-width:0; font-size:clamp(19px,4vw,24px) !important; }
+  header .header-icons { gap:6px !important; }
+  header .header-icons a[aria-label="Sign in"] { width:auto !important; min-width:60px !important; height:44px !important; padding:0 12px !important; border-radius:8px !important; font-size:14px !important; }
+  header .header-icons a[aria-label="My account"], header .header-icons a[aria-label="Sign out"] { min-width:40px !important; min-height:40px !important; }
+  header .nav-links { gap:4px !important; flex-wrap:wrap; }
+  header .nav-links a { min-height:44px; display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; }
+  input, select, textarea { max-width:100%; box-sizing:border-box; font-size:16px !important; }
+  .customer-menu .main-nav { gap:8px; }
+  .customer-menu .nav-btn { border-radius:8px !important; box-shadow:none !important; min-height:48px; font-size:14px !important; }
+  .customer-menu .invoice-details { flex-direction:column; gap:14px; }
+  .customer-menu .detail-box { min-width:0; overflow-wrap:anywhere; }
+  .customer-menu .invoice-container { padding:20px; }
+  .customer-menu .invoice-table { display:block; overflow-x:auto; max-width:100%; }
+  .profile-container { width:calc(100% - 32px) !important; box-sizing:border-box; padding:24px !important; margin-top:32px !important; }
+  .order-history-section { padding-inline:16px; box-sizing:border-box; }
+  .order-card { min-width:0; overflow-wrap:anywhere; }
+  .table-container { max-width:100%; overflow-x:auto; }
+}
+@media (max-width: 600px) {
+  .customer-menu #backToTop { display:none !important; }
+  .customer-menu .main-nav { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .customer-menu .cart-container, .customer-menu .cart-summary { padding:18px; }
+  .customer-menu .cart-header { flex-wrap:wrap; gap:10px; }
+  .customer-menu .cart-header h2 { font-size:24px; }
+  .customer-menu .cart-item { display:grid; grid-template-columns:64px minmax(0,1fr) 40px; gap:12px; align-items:start; }
+  .customer-menu .item-image { width:64px; height:64px; margin:0; }
+  .customer-menu .item-details { min-width:0; }
+  .customer-menu .item-name { font-size:16px; overflow-wrap:anywhere; }
+  .customer-menu .item-quantity { flex-wrap:wrap; gap:4px; }
+  .customer-menu .quantity-input { width:44px; margin:0; padding:6px 2px; }
+  .customer-menu .quantity-btn { width:36px; min-height:40px; }
+  .customer-menu .remove-btn { margin:0; min-width:40px; min-height:40px; }
+  .customer-menu .summary-row { gap:12px; font-size:16px; }
+  .customer-menu .summary-row > :last-child { white-space:nowrap; }
+  .customer-menu .modal-content { width:calc(100% - 24px); margin:12px auto; padding:20px; box-sizing:border-box; }
+  .customer-menu .form-grid { grid-template-columns:minmax(0,1fr) !important; }
+  .profile-container .form-actions { flex-direction:column; gap:12px; }
+  footer { padding-bottom:88px !important; }
+  body:has(input:focus, textarea:focus, select:focus) .chat-launcher:has(+ .chat-popup[aria-hidden="true"]) { visibility:hidden; }
+  .chat-popup { max-height:calc(100dvh - 90px) !important; }
+}
+@media (max-width: 360px) {
+  header .logo::before { margin-right:5px; }
+  header { padding-inline:10px !important; }
+  .customer-menu .container { padding-inline:12px; }
+  .customer-menu .cart-item { grid-template-columns:minmax(0,1fr) 40px; }
+  .customer-menu .item-image { display:none; }
+}

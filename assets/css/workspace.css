@@ -1,0 +1,109 @@
+/* Final workspace polish for authenticated customer and admin pages. */
+:root {
+  --workspace-ink: #23392d;
+  --workspace-muted: #68786c;
+  --workspace-line: #dfe7dc;
+  --workspace-paper: #f6f7f2;
+  --workspace-forest: #315b43;
+}
+body.account-page,
+body.admin-workspace { background: var(--workspace-paper) !important; color: var(--workspace-ink); }
+body.account-page footer,
+body.admin-workspace footer { margin-top: 64px; }
+body.account-page footer .footer-content,
+body.admin-workspace footer .footer-content { max-width: 1240px; margin-inline: auto; }
+.portfolio-disclosure { max-width: 1240px; margin: 14px auto 0; color: #b8cdbb; font-size: .78rem; line-height: 1.5; }
+.order-history a { display: block; overflow-wrap: anywhere; }
+.invoice-details { overflow-x: auto; }
+body.admin-workspace main { width: min(1240px, 92%); margin-inline: auto; }
+body.admin-workspace .table-container { overflow-x: auto; }
+body.admin-workspace table { min-width: 760px; }
+body.admin-workspace th { white-space: nowrap; }
+body.admin-workspace .table-tools { position: relative; z-index: 1; background: var(--workspace-paper); padding-block: 12px; gap:12px; }
+body.admin-workspace .table-export { white-space: nowrap; }
+body.admin-workspace button,
+body.admin-workspace a.btn,
+body.admin-workspace .btn { min-height: 40px; }
+@media (max-width: 760px) {
+  body.account-page footer,
+  body.admin-workspace footer { margin-top: 36px; }
+  body.admin-workspace main { width: min(100% - 28px, 1240px); }
+  body.admin-workspace .table-tools { top: auto; }
+}
+/* Admin navigation stays in view while the work surface scrolls. */
+.admin-workspace .nav-links a { gap:12px; }
+.admin-workspace .nav-links a i { font-size:15px; width:18px; text-align:center; }
+.admin-workspace .dashboard-intro { padding-bottom:20px; border-bottom:1px solid #dce4d7; }
+.admin-workspace .dashboard-kpi { border-radius:14px; box-shadow:none; border:1px solid #dce4d7; padding:22px; }
+.admin-workspace .dashboard-kpi strong { font-size:32px; font-variant-numeric:tabular-nums; }
+.admin-workspace .dashboard-surface { border-radius:14px; box-shadow:none; }
+.admin-workspace .dashboard-eyebrow,.admin-workspace .banner-eyebrow { color:#6d7c66 !important; font-size:11px; letter-spacing:.12em; }
+.admin-workspace .recent-order-row { align-items:center; padding-block:16px; }
+.admin-workspace .recent-order-row>div { min-width:0; }
+.admin-workspace .recent-order-row strong { overflow-wrap:anywhere; }
+.admin-workspace .order-meta { flex-shrink:0; }
+.admin-workspace .btn-primary,.admin-workspace .save-btn,.admin-workspace button[type=submit] { box-shadow:none !important; }
+.admin-workspace input:not([type=checkbox]):not([type=radio]):not([type=file]),.admin-workspace select,.admin-workspace textarea { border:1px solid #d4dfce; border-radius:8px; min-height:42px; }
+.admin-workspace th { font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding-block:14px; }
+.admin-workspace td { padding-block:16px; font-size:13px; }
+.admin-workspace tbody tr:hover { background:#f5f7ef !important; }
+.admin-workspace table { font-variant-numeric:tabular-nums; }
+.admin-workspace .table-tools input { max-width:100%; min-width:0; }
+.admin-workspace .admin-page-banner { width:100% !important; margin:28px 0 24px !important; }
+.account-page .account-heading { border-bottom:1px solid #dce4d7; padding-bottom:24px; }
+.account-page .account-heading h1 { font:400 40px/1.15 Georgia,serif; }
+.account-page .profile-header { background:#254d36; color:#fff; }
+.account-page .profile-header h2 { color:#fff; }
+.account-page .profile-header>p,.account-page .profile-header .photo-feedback,.account-page .account-note p { color:#d0dcc7; }
+.account-page .account-note a,.account-page .account-note strong { color:#e2edcf; }
+.account-page .account-note { border-color:#ffffff25; }
+.account-page .order-card { padding:20px !important; }
+@media(min-width:1100px) {
+ body.admin-workspace { padding-left:222px; }
+ body.admin-workspace>header { position:fixed !important; inset:0 auto 0 0; width:222px; height:100dvh; padding:28px 18px !important; display:flex !important; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:36px !important; box-shadow:none !important; background:#203e2d !important; }
+ body.admin-workspace>header>.header-inner { display:flex !important; flex-direction:column; align-items:stretch; height:100%; width:100%; gap:36px !important; }
+ body.admin-workspace>header .logo { font-size:21px !important; flex:0 0 auto; }
+ body.admin-workspace>header .nav-links { display:flex !important; flex:0 0 auto; flex-direction:column; align-items:stretch; width:100% !important; gap:8px !important; }
+ body.admin-workspace>header .nav-links::before { content:'CAFÉ WORKSPACE'; color:#afc7a9; font:600 10px/1.5 'Segoe UI',sans-serif; letter-spacing:.15em; margin:4px 12px 12px; }
+ body.admin-workspace>header .nav-links a { justify-content:flex-start; border-radius:8px; width:100%; padding:12px !important; font-size:14px !important; color:#d8e5d2 !important; }
+ body.admin-workspace>header .nav-links a.active { background:#dce9c7 !important; color:#203e2d !important; }
+ body.admin-workspace>header .header-actions { flex:0 0 auto; margin-top:auto; width:100% !important; justify-content:flex-start; padding-top:20px; border-top:1px solid #ffffff25; }
+ body.admin-workspace>header .header-actions::before { content:'Account'; color:#c5d8bf; font-size:12px; margin-right:auto; }
+ body.admin-workspace main { width:calc(100% - 64px); }
+ body.admin-workspace>.admin-page-banner { width:calc(100% - 64px) !important; margin-inline:auto !important; }
+ body.admin-workspace .dashboard-grid { grid-template-columns:.85fr 1.15fr; }
+}
+@media(max-width:760px) { .admin-workspace>.admin-page-banner { width:calc(100% - 32px) !important; margin-inline:auto !important; } .admin-workspace .nav-links a i { display:none; } .admin-workspace .dashboard-kpis { grid-template-columns:repeat(2,minmax(0,1fr)); } .account-page .profile-container { width:calc(100% - 28px); } }
+
+/* Product management uses readable cards on a phone. */
+.mobile-field-label { display:none; }
+.product-category-label { display:inline-flex; padding:6px 10px; border-radius:6px; background:#edf2e5; color:#355740; font-size:12px; font-weight:600; }
+.admin-product-editor #image-help { display:block; margin-top:8px; color:#64725e; font-size:12px; line-height:1.5; }
+.admin-product-editor .form-grid { gap:18px 24px; margin-bottom:18px; }
+.admin-product-editor .form-grid .form-group { margin:0; }
+@media(max-width:760px) {
+  .admin-workspace .products-table-container { overflow:visible; background:transparent; border:0; box-shadow:none; }
+  .admin-workspace #productsTable { display:block; min-width:0; margin:20px 0; background:transparent; box-shadow:none; overflow:visible; }
+  .admin-workspace #productsTable thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  .admin-workspace #productsTable tbody { display:grid; gap:16px; }
+  .admin-workspace #productsTable tbody tr { display:grid; grid-template-columns:64px minmax(0,1fr) minmax(0,1fr); grid-template-areas:"photo name name" "description description description" "price price category" "nutrition nutrition nutrition" "actions actions actions"; gap:14px 12px; padding:18px; border:1px solid #dbe3d5; border-radius:12px; background:#fff; }
+  .admin-workspace #productsTable td { display:block; border:0; padding:0; min-width:0; font-size:13px; }
+  .admin-workspace #productsTable td:nth-child(1) { grid-area:photo; }
+  .admin-workspace #productsTable td:nth-child(2) { grid-area:name; align-self:center; }
+  .admin-workspace #productsTable td:nth-child(3) { grid-area:description; color:#64715f; }
+  .admin-workspace #productsTable td:nth-child(4) { grid-area:price; align-self:center; }
+  .admin-workspace #productsTable td:nth-child(5) { grid-area:category; align-self:center; justify-self:end; }
+  .admin-workspace #productsTable td:nth-child(6) { grid-area:nutrition; padding:12px 0; border-block:1px solid #e5eadf; }
+  .admin-workspace #productsTable td:nth-child(7) { grid-area:actions; display:flex; gap:10px; align-items:stretch; }
+  .admin-workspace #productsTable .thumbnail { display:block; width:64px; height:64px; object-fit:cover; }
+  .admin-workspace #productsTable .nutrition-highlight { font-size:15px; }
+  .admin-workspace #productsTable .stats-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin:0; }
+  .admin-workspace #productsTable .stat-item { padding:0; background:transparent; text-align:left; }
+  .admin-workspace #productsTable .stat-label { font-size:10px; }
+  .admin-workspace #productsTable .mobile-field-label { display:inline; margin-right:8px; color:#74816b; font-size:12px; font-weight:400; }
+  .admin-workspace #productsTable .action-btn { display:flex; justify-content:center; align-items:center; gap:8px; min-height:44px; margin:0; padding:8px 16px; border-radius:7px; font-size:13px; }
+  .admin-workspace #productsTable .edit-btn { background:#315b43; color:#fff; flex:1; }
+  .admin-workspace #productsTable .inline-delete-form { margin:0; }
+  .admin-workspace #productsTable .delete-btn { background:#fff5f2; border:1px solid #eedbd3; color:#9c493c; }
+  .admin-workspace #productsTable .featured-badge,.admin-workspace #productsTable .discount-badge { margin-top:5px; font-size:10px; }
+}

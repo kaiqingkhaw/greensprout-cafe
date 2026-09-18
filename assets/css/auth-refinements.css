@@ -1,0 +1,29 @@
+/* Shared customer authentication styles. */
+.auth-intro { text-align:left; color:#526459; font-size:15px; line-height:1.6; margin:-12px 0 24px; }
+.guest-option { margin-top:24px; }
+.auth-divider { display:flex; align-items:center; gap:12px; color:#647469; font-size:14px; margin-bottom:16px; }
+.auth-divider::before, .auth-divider::after { content:""; flex:1; height:1px; background:#e0e7e1; }
+.guest-button { display:flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:10px 16px; box-sizing:border-box; border:1px solid #b9cbbf; border-radius:7px; color:#285d3d; background:#fff; text-decoration:none; font-size:15px; font-weight:600; transition:background .15s,border-color .15s; }
+.guest-button:hover { background:#f2f7f3; border-color:#285d3d; }
+.guest-option p { margin:10px 0 0; color:#647469; font-size:14px; line-height:1.5; text-align:center; }
+a:focus-visible, button:focus-visible { outline:3px solid #91bda0; outline-offset:3px; }
+.error-message { background:#fff3f1; border:1px solid #ebc5bf; border-radius:7px; padding:12px; color:#942e24 !important; text-align:left; }
+.success-message { background:#eff8f1; border:1px solid #bad9c2; border-radius:7px; padding:12px; text-align:left; }
+input[aria-invalid="true"] { border-color:#b33c31 !important; }
+.error-message, .success-message { height: auto !important; line-height: 1.5; overflow-wrap: anywhere; }
+.forgot-container[hidden] { display: none; }
+.options { gap: 12px; flex-wrap: wrap; }
+button:disabled { opacity: .65; cursor: wait; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+body { font-family: "Segoe UI", Arial, sans-serif !important; background: #f3f6f2 !important; padding: 32px 16px !important; min-height: 100dvh; height: auto !important; box-sizing: border-box; }
+body::before { background: rgba(18, 44, 29, .62) !important; }
+button, input, h2 { font-family: inherit !important; }
+#loginBox, #signupBox { box-sizing: border-box; width: min(440px, 100%) !important; margin: auto !important; padding: 28px !important; border: 1px solid #dfe7df !important; border-radius: 14px !important; background: #fff !important; box-shadow: 0 20px 65px rgba(20, 45, 29, .16) !important; }
+.back-btn { position: static !important; margin: 0 0 16px !important; width: 36px !important; height: 36px !important; background: #f0f5f0 !important; box-shadow: none !important; border-radius: 8px !important; }
+h2 { font-size: 27px !important; line-height: 1.25 !important; text-align: left !important; margin: 0 0 26px !important; letter-spacing: -.025em; color: #244832 !important; }
+h2::after { display: none !important; }
+input:not([type="checkbox"]) { height: 48px !important; border: 1px solid #ccd8ce !important; border-radius: 7px !important; font-size: 15px !important; background: #fff !important; box-sizing: border-box; }
+.password-toggle { border-radius: 6px !important; }
+.login-btn, .signup-btn { border-radius: 7px !important; background: #285d3d !important; box-shadow: none !important; }
+.leaf { display: none !important; }
+@media(max-width:480px) { body { padding: 20px 16px !important; } #loginBox, #signupBox { padding: 24px !important; } }

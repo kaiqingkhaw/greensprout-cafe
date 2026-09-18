@@ -1,0 +1,10 @@
+{
+  "name": "greensprout-cafe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack PHP and MySQL university café portfolio project",
+  "scripts": {
+    "test": "node tests/check-syntax.cjs && node tests/check-assets.cjs && node tests/catalog-regression.cjs && node tests/home-menu-regression.cjs && node tests/frontend-regression.cjs",
+    "test:http": "node tests/full-regression.cjs"
+  }
+}

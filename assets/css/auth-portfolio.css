@@ -1,0 +1,172 @@
+/* Portfolio-level authentication polish. Loaded after the legacy page styles so
+   the login and signup screens share one calm, intentional visual system. */
+body.login-page,
+body.signup-page {
+  isolation: isolate;
+  color: #20372a;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(42px, 7vw, 112px);
+  padding: 86px clamp(24px, 6vw, 96px) 42px !important;
+  background: #142c1d !important;
+}
+
+body.login-page::after,
+body.signup-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 16%, rgba(177, 225, 191, .18), transparent 28%),
+    radial-gradient(circle at 86% 82%, rgba(244, 206, 142, .13), transparent 24%),
+    linear-gradient(110deg, rgba(6, 30, 18, .78), rgba(8, 35, 21, .38));
+}
+
+.auth-showcase {
+  flex: 0 1 540px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  animation: auth-reveal .7s ease both;
+}
+.auth-showcase-kicker {
+  margin: 0 0 22px;
+  color: #c9e8cf;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.auth-showcase h1 {
+  max-width: 9ch;
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 6vw, 78px);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-shadow: 0 6px 28px rgba(0,0,0,.18);
+}
+.auth-showcase h1 em { color: #bde5c6; font-style: italic; }
+.auth-showcase-copy {
+  max-width: 43ch;
+  margin: 28px 0 28px;
+  color: rgba(255,255,255,.78);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.auth-showcase-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,.66);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.auth-showcase-meta i { color: #acd9b6; font-style: normal; }
+@keyframes auth-reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+.auth-brand {
+  position: fixed;
+  top: 26px;
+  left: 32px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  text-shadow: 0 2px 16px rgba(4, 25, 14, .35);
+}
+.auth-brand:hover { color: #eff9f1; }
+.auth-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 12px;
+  background: rgba(255,255,255,.17);
+  backdrop-filter: blur(12px);
+}
+.auth-brand-mark i { color: #d6f2dc; font-size: 16px; }
+.auth-brand em { color: #d6f2dc; font-style: normal; font-weight: 500; }
+.auth-ambient-note {
+  position: fixed;
+  right: 32px;
+  top: 31px;
+  z-index: 3;
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(4,25,14,.4);
+}
+
+#loginBox,
+#signupBox {
+  width: min(448px, 100%) !important;
+  padding: 32px !important;
+  flex: 0 1 448px;
+  border-radius: 24px !important;
+  border-color: rgba(255,255,255,.72) !important;
+  box-shadow: 0 32px 90px rgba(2, 17, 9, .4), 0 4px 16px rgba(7,35,20,.1) !important;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(18px);
+}
+#loginBox h2,
+#signupBox h2 { font-size: clamp(25px, 3vw, 30px) !important; letter-spacing: -.035em; }
+#loginBox .auth-intro,
+#signupBox .auth-intro { max-width: 34ch; }
+#loginBox .input-group,
+#signupBox .input-group { margin: 16px 0; }
+#loginBox input:not([type="checkbox"]),
+#signupBox input:not([type="checkbox"]) {
+  background: #fbfdfb !important;
+  border-color: #d4e0d6 !important;
+}
+#loginBox input:not([type="checkbox"]):hover,
+#signupBox input:not([type="checkbox"]):hover { border-color: #a9c5af !important; }
+#loginBox input:not([type="checkbox"]):focus,
+#signupBox input:not([type="checkbox"]):focus {
+  border-color: #2f7047 !important;
+  box-shadow: 0 0 0 4px rgba(47,112,71,.12) !important;
+}
+.login-btn,
+.signup-btn {
+  min-height: 50px;
+  letter-spacing: .01em;
+  box-shadow: 0 9px 20px rgba(40, 93, 61, .18) !important;
+}
+.login-btn:hover,
+.signup-btn:hover { box-shadow: 0 12px 26px rgba(40,93,61,.27) !important; }
+.login-btn:focus-visible,
+.signup-btn:focus-visible { outline: 3px solid #a9d7b5; outline-offset: 3px; }
+.guest-button { border-radius: 9px !important; background: #f8fbf8 !important; }
+.guest-button:hover { background: #eef7f0 !important; transform: translateY(-1px); }
+.forgot-container { border-radius: 18px !important; background: rgba(255,255,255,.98) !important; }
+
+@media (max-width: 860px) {
+  body.login-page, body.signup-page { gap: 0; padding-top: 82px !important; }
+  .auth-showcase { display: none; }
+}
+@media (max-width: 640px) {
+  .auth-brand { top: 16px; left: 18px; }
+  .auth-ambient-note { top: 22px; right: 18px; font-size: 10px; letter-spacing: .07em; }
+  #loginBox, #signupBox { padding: 26px 22px !important; border-radius: 18px !important; }
+}
+@media (max-width: 420px) {
+  .auth-ambient-note { display: none; }
+  #loginBox, #signupBox { padding: 24px 18px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guest-button:hover { transform: none; }
+}

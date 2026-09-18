@@ -1,0 +1,108 @@
+/* Focused account and checkout presentation. Loaded after the legacy themes. */
+.customer-menu .form-group .checkbox-label { display:flex; align-items:center; gap:10px; cursor:pointer; font-size:14px; line-height:1.5; font-weight:500; }
+.customer-menu .checkbox-label input[type=checkbox] { width:18px; height:18px; min-width:18px; padding:0; margin:0; flex:0 0 18px; accent-color:#2d573a; cursor:pointer; }
+.wallet-receipt { display:grid; gap:8px; margin:20px 0; padding:22px; text-align:center; background:#f3f6ef; border:1px solid #e0e7da; border-radius:10px; }
+.wallet-receipt>span { font-size:13px; color:#536b57; }
+.wallet-receipt>strong { font-size:30px; letter-spacing:-1px; color:#24432f; }
+.wallet-receipt>small { color:#6e7b70; font-size:11px; }
+.wallet-approve { width:100%; padding:14px; background:#2d573a; color:white; border:0; border-radius:8px; font:600 14px 'Segoe UI',sans-serif; cursor:pointer; }
+.wallet-approve:disabled { background:#e6efdf; color:#335439; cursor:default; }
+.wallet-status { font-size:12px; line-height:1.6; text-align:center; color:#42603c; margin-top:12px; }
+[hidden] { display:none !important; }
+.customer-menu .step-indicator,.customer-menu .step-labels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; text-align:center; }
+.customer-menu .step-indicator { margin-bottom:4px; }
+.customer-menu .step-indicator .step { justify-self:center; }
+.customer-menu .step-labels { margin-bottom:26px; }
+.customer-menu .quantity-btn:disabled { opacity:.45; cursor:not-allowed; }
+.eyebrow { display:block; font:700 11px/1.5 Arial,sans-serif; letter-spacing:2px; color:#52745e; margin-bottom:10px; }
+.account-page { background:#f6f7f2 !important; color:#213b2c; }
+.account-page .profile-container { width:calc(100% - 64px); max-width:1120px; padding:0 !important; margin:48px auto 72px !important; border:0 !important; box-shadow:none !important; background:transparent !important; }
+.account-heading { margin-bottom:32px; }
+.account-heading h1 { margin:0 0 10px; font-size:34px; line-height:1.2; letter-spacing:-1px; color:#203c2d; }
+.account-heading>p { font-size:15px; color:#6c776d; }
+.account-layout { display:grid; grid-template-columns:270px minmax(0,1fr); gap:24px; align-items:start; }
+.account-page .profile-header { margin:0; padding:32px 24px; text-align:center; border:1px solid #dde5da; background:#eef3e9; border-radius:20px; }
+.account-page .profile-avatar { width:96px; height:96px; margin:0 auto 18px; font-size:34px; background:#d7e5ce; color:#54774d; border:4px solid #fff; box-shadow:0 4px 12px #233e2b0d; }
+.account-page .profile-avatar:hover { transform:none; }
+.account-page .profile-header h2 { font-size:20px; line-height:1.4; margin-bottom:6px; overflow-wrap:anywhere; }
+.account-page .profile-header>p { font-size:12px; color:#677666; }
+.photo-actions { display:flex; flex-direction:column; align-items:center; gap:12px; margin:22px 0 14px; }
+.photo-button,.photo-remove { font-family:inherit; font-weight:600; font-size:13px; line-height:1.4; cursor:pointer; }
+.photo-button { border:1px solid #b7c8b2; border-radius:9px; padding:11px 18px; background:white; color:#264b32; font-size:13px; font-weight:600; }
+.photo-button i { margin-right:6px; }
+.photo-remove { border:0; background:transparent; color:#9e493e; font-size:12px; text-decoration:underline; text-underline-offset:3px; }
+.account-page .profile-header .photo-feedback { font-size:11px; min-height:32px; line-height:1.6; margin-top:8px; }
+.account-note { margin-top:24px; border-top:1px solid #d3dfce; padding-top:24px; text-align:left; }
+.account-note>i { color:#759565; margin-right:8px; }
+.account-note strong { font-size:13px; }
+.account-note p { margin:10px 0 16px; font-size:12px; line-height:1.8; color:#677666; }
+.account-note a { color:#32563a; font-size:12px; font-weight:600; }
+.account-page .profile-form { margin:0; max-width:none; padding:32px !important; border:1px solid #e0e5dc; border-radius:20px; box-shadow:0 6px 24px #203c2d04; }
+.account-page .profile-form:hover { box-shadow:0 6px 24px #203c2d04; }
+.section-heading { border-bottom:1px solid #e9ede6; margin-bottom:26px; padding-bottom:23px; }
+.section-heading h2 { font-size:23px; letter-spacing:-.5px; margin:0 0 7px; }
+.section-heading p { font-size:13px; color:#6e7a70; }
+.account-page .profile-form .form-group { margin-bottom:21px; }
+.account-page .profile-form label { font-size:12px; font-weight:600; margin-bottom:9px; color:#405641; }
+.account-page .profile-form input:not([type=hidden]):not([type=file]) { width:100%; height:48px; padding:12px 14px; border:1px solid #dce3d8; background:#fcfdfb; border-radius:8px; font-family:inherit; font-size:14px; color:#26392b; box-shadow:none; }
+.account-page .button-group { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #e9ede6; margin-top:28px; padding-top:24px; gap:12px; }
+.account-page .button-group .btn { font-size:13px; padding:12px 18px; border-radius:8px; box-shadow:none; margin:0; }
+.account-page .button-group .btn-primary { background:#2b5337 !important; color:#fff; }
+.account-page .button-group .btn-back { background:transparent; color:#65725f; }
+.account-page .order-history-section { max-width:none !important; margin-top:40px !important; }
+.account-page .order-history-section h2 { text-align:left !important; font-size:23px !important; }
+.account-page .order-history-section .order-card { border:1px solid #e0e5dc; box-shadow:none !important; border-radius:14px !important; }
+.account-page .alert { margin:0 0 24px; font-size:13px; border-radius:10px; }
+#payment-step .delivery-form { max-width:740px; margin:0 auto; padding:32px; background:#fff; border:1px solid #dde5da; border-radius:18px; box-shadow:0 8px 30px #243c2c06; }
+#payment-step h3 { font-size:27px; text-align:left; letter-spacing:-.7px; margin:0 0 10px; color:#24432f; }
+.payment-intro { color:#6e7b70; font-size:14px; margin-bottom:20px; line-height:1.7; }
+#payment-step .checkout-notice { background:#f7f7f0; border:1px solid #e7e8d9; color:#6b7056; font-size:12px; line-height:1.7; padding:12px 15px; margin-bottom:26px; }
+#payment-step .payment-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+#payment-step .payment-card { min-width:0; position:relative; background:#fff; border:1px solid #dce4d9; color:#536b57; border-radius:12px; padding:19px 10px 16px; font-family:inherit; box-shadow:none; }
+#payment-step .payment-card.selected { border:2px solid #3b6240; padding:18px 9px 15px; background:#f0f5eb; }
+#payment-step .payment-card.selected::after { content:'✓'; position:absolute; top:7px; right:9px; font-size:12px; color:#345739; }
+#payment-step .payment-card i { font-size:22px; margin-bottom:9px; }
+#payment-step .payment-card p { font-size:13px; font-weight:600; margin:0 0 4px; }
+#payment-step .payment-card small { font-size:10px; color:#71816d; }
+.card-entry { border:1px solid #e0e7da; border-radius:12px; padding:23px; margin-top:22px; }
+.card-entry-heading { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+.card-entry-heading h4 { font-size:16px; color:#2b4532; margin:0; }
+.test-badge { padding:5px 8px; background:#eef1e6; color:#65754c; font:bold 9px/1 Arial,sans-serif; letter-spacing:1px; border-radius:4px; }
+.test-instruction { font-size:12px; color:#77816e; line-height:1.6; margin:9px 0 15px; }
+.fill-test { width:100%; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; background:#f2f6ed; border:1px dashed #b7cbae; padding:12px; border-radius:7px; color:#45643c; cursor:pointer; font:600 12px Arial,sans-serif; margin-bottom:22px; }
+.fill-test span { font-weight:400; }
+.card-fields { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.card-field.wide { grid-column:1/-1; }
+.card-field label { display:block; font-size:12px; font-weight:600; margin-bottom:8px; color:#476044; }
+.card-field input { box-sizing:border-box; width:100%; min-width:0; height:46px; border:1px solid #dce3d7; border-radius:7px; background:#fdfefb; padding:12px; font:14px Arial,sans-serif; color:#253e2b; }
+.card-field input::placeholder { color:#a0aa99; }
+.card-field input[aria-invalid=true] { border-color:#ad5144; background:#fffaf9; }
+.card-help { font-size:11px; line-height:1.7; color:#7b8774; margin:18px 0 0; }
+.card-help i { margin-right:5px; }
+.card-error { font-size:12px; color:#a64235; line-height:1.6; margin-top:12px; }
+.payment-detail { display:flex; gap:14px; padding:20px; background:#f5f8f0; border:1px solid #e1e8d9; border-radius:10px; margin:22px 0; }
+.payment-detail>i { margin-top:4px; color:#6f8a5c; }
+.payment-detail strong { font-size:14px; color:#3d5839; }
+.payment-detail p { font-size:12px; color:#73826a; line-height:1.8; margin-top:6px; }
+#payment-step .form-actions { margin-top:24px; gap:12px; }
+#payment-step .pay-now-btn { width:auto; flex:1; border-radius:8px; background:#2d573a !important; box-shadow:none; font-size:14px; }
+#payment-step .back-btn { border-radius:8px; font-size:13px; }
+.checkout-footnote { font-size:11px !important; color:#78876d !important; margin-top:12px; text-align:center; line-height:1.7; }
+.account-page button:focus-visible,.card-entry button:focus-visible,#payment-step button:focus-visible { outline:3px solid #a3bd8a; outline-offset:3px; }
+.card-field input:focus,.account-page .profile-form input:focus { outline:2px solid #abc599; outline-offset:2px; }
+@media(max-width:760px) {
+ .account-page .profile-container { width:calc(100% - 32px) !important; margin:28px auto 48px !important; }
+ .account-heading h1 { font-size:31px; }
+ .account-layout { grid-template-columns:1fr; gap:18px; }
+ .account-page .profile-header { padding:24px; }
+ .account-note { display:none; }
+ .account-page .profile-form { padding:24px !important; }
+ .account-page .button-group { flex-wrap:wrap; }
+ #payment-step .delivery-form { padding:22px 16px; }
+ #payment-step h3 { font-size:23px; }
+ .card-entry { padding:17px 14px; }
+ #payment-step .payment-card p { font-size:11px; }
+ #payment-step .payment-card small { font-size:9px; }
+ #payment-step .form-actions { flex-direction:column-reverse; }
+ #payment-step .form-actions button { width:100%; }
+}

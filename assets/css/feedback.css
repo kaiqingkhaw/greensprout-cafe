@@ -1,0 +1,5 @@
+.gs-notice { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:10050; box-sizing:border-box; display:flex; align-items:flex-start; gap:16px; width:min(520px,calc(100% - 32px)); padding:16px 18px; border:1px solid #d8bcb6; border-left:4px solid #a33c2d; border-radius:10px; background:#fff; color:#542e28; box-shadow:0 8px 32px #18251c26; font:400 15px/1.5 "Segoe UI",Arial,sans-serif; }
+.gs-notice[hidden] { display:none; }
+.gs-notice p { margin:0; flex:1; overflow-wrap:anywhere; }
+.gs-notice button { flex:none; border:0; border-radius:6px; background:#f5eeec; color:#633d36; padding:8px 12px; min-height:44px; font:600 14px "Segoe UI",Arial,sans-serif; cursor:pointer; }
+.gs-notice button:focus-visible { outline:3px solid #a33c2d; outline-offset:2px; }
